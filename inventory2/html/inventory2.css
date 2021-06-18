@@ -1,0 +1,210 @@
+body {
+	font-family: "Segoe UI", "Segoe UI Symbol", "Segoe UI Emoji",  Arial, sans-serif;
+	background-color: transparent; /* change to TRANSPARENT */
+}
+::-webkit-scrollbar-button{ 
+	display: block; 
+	height: 13px; 
+	border-radius: 0px; 
+	background-color: #5a5a5a; 
+}
+::-webkit-scrollbar-button:hover{ 
+	background-color: #858383; 
+} 
+::-webkit-scrollbar-thumb{ 
+	background-color: #5badd9; 
+} 
+::-webkit-scrollbar-thumb:hover{ 
+	background-color: #3f8499; 
+} 
+::-webkit-scrollbar-track{ 
+	background-color: #484848; 
+} 
+::-webkit-scrollbar-track:hover{ 
+	background-color: #5a5a5a; 
+} 
+::-webkit-scrollbar{ 
+	width: 4px;
+}
+#masterContainer{
+  display: none;
+}
+.invContainer{
+	background-color: #161616;
+  opacity: 0.95;
+  border-radius: 4px;
+  position: fixed;
+  left: 7%;
+  top: 10%;
+  width: 40%;
+	height: 650px;
+}
+.invContainerBlocker{
+  background-color: #646464;
+  opacity: 0.9;
+  border-radius: 4px;
+  position: fixed;
+  left: 7%;
+  top: 10%;
+  width: 40%;
+	height: 650px;
+}
+.targetContainer{
+  background-color: #161616;
+  opacity: 0.95;
+  border-radius: 4px;
+  position: fixed;
+  right: 7%;
+  top: 10%;
+  width: 40%;
+	height: 650px;
+}
+.targetContainerBlocker{
+  background-color: #646464;
+  opacity: 0.9;
+  border-radius: 4px;
+  position: fixed;
+  right: 7%;
+  top: 10%;
+  width: 40%;
+	height: 650px;
+}
+.blockerSpinner{
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  left: 50%;
+  top: 50%;
+}
+.header{
+  background-color: #3d3d3d;
+	color: #777777;
+  height: 22px;
+  text-align: center;
+}
+.invAnchor{
+  border: 1px solid #0E1621;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.targetAnchor{
+  border: 1px solid #0E1621;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.inv-item{
+  display: inline-block;
+  margin: 8px;
+  border: 1px solid #252525;
+  width: 90px;
+  height: 122px;
+}
+.ddInv-placeholder{
+  display: inline-block;
+  margin: 8px;
+  width: 90px;
+  height: 122px;
+  background-color: rgba(112, 128, 144, 0.753);
+}
+.inv-item-image{
+  width: 100%;
+  height: 100%;
+}
+.inv-image-center{
+	position: relative;
+	margin: 0 auto;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  width: 64px;
+  height: 64px;
+}
+.inv-text-overlay{
+	display: none;
+	width: 100%;
+	height: 100%;
+	color: skyblue;
+	font-size: 12px;
+}
+.attachment-text-overlay{
+  color: skyblue;
+  font-size: 10px;
+}
+.target-item{
+  display: inline-block;
+  margin: 8px;
+  border: 1px solid #252525;
+  width: 90px;
+  height: 122px;
+}
+.invh-text{
+  color: #c0c0c0;
+}
+.qspinner{
+  float: right;
+  font-size: 12px;
+}
+.qtyinput .btn{
+  margin-top: 4px;
+  min-width: 0.7rem !important;
+  width: 0.7rem !important;
+  height: 1.2rem !important;
+  font-size: 12px !important;
+  line-height: 1px !important;
+}
+.qtyinput .btn > strong{
+  margin-left: -4px;
+}
+.qtyinput input[type="text"]{
+  border: 1px solid #303030 !important;
+	height: 1.2rem !important;
+  margin-top: 4px;
+  background-color: #303030;
+	color: #7d8790;
+}
+.qtydisplay{
+  color: #fffded;
+  float: right;
+}
+.dinv-text{
+	padding:4px;
+	color: #a0a0a0;
+	font-size: 12px;
+	float: left;
+}
+.tooltip-inner {
+	white-space:pre-line;
+}
+/* Alertify dialog */
+.alertify .ajs-dialog{
+	color: #b1c3cc;
+	background-color: #252627;
+	border-color: #424344;
+}
+.alertify .ajs-content{
+	color: #9e9e9e;
+}
+.alertify .ajs-header{
+	color: #cecece;
+	background-color: #313233;
+	border-bottom: #1f2020;
+}
+.alertify .ajs-footer{
+	background-color: #252525;
+	border-top: #1f2020;
+}
+.alertify .ajs-input{
+	width: 95%;
+}
+.fakeTooltip{
+	display: none;
+	position: fixed;
+	background-color: #2b2d31;
+	border: 1px solid #393c41;
+	color: #858585;
+	font-size: 12px;
+	padding: 2px;
+}

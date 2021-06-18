@@ -1,0 +1,261 @@
+<html>
+  <head>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js" type="text/javascript"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.css" rel="stylesheet" type="text/css"/>
+    <script src="/html/jqueryui/bootstrap-input-spinner.js" type="text/javascript"></script>
+    
+    <link href="jobs.css" rel="stylesheet" type="text/css" />
+    <script src="jobs.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js" type="text/javascript"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.structure.min.css" rel="stylesheet" type="text/css">
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/0683b7184f.js"></script>
+  </head>
+  <body>
+    <div id="gameContainer" style="display:block;">
+      
+    </div>
+    <div id="progcontainer" class="container">
+      <div class="row" style="margin-top: -8px;">
+        <div class="col-12">
+          <span id="progtitle">The counterfeit presses are running..</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div id="jobprogress" class="ui-progressbar ui-corner-all jobprogress"></div>
+        </div>
+      </div>
+    </div>
+    <div id="fishboards">
+      <div id="fishlist">
+        <table class="darkTable" id="fishtable">
+          <thead>
+            <tr>
+              <th>Entry Name</th>
+              <th>Weight</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+          </tfoot>
+          <tbody id="fishitems">
+            <!--<tr>
+              <td>Name</td>
+              <td>1.0</td>
+            </tr>
+            <tr>
+              <td>cell1_2</td>
+              <td>cell2_2</td>
+            </tr>-->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="fishicon"></div>
+    <script>
+      $("#jobprogress").progressbar({value: 20});
+    </script>
+    <div class="lawncontainer"><div class="lawntext">$15</div><div class="lawnimage"></div></div>
+
+    <div class="seedcontainer">
+      <div class="row">
+        <div class="col-12" style="text-align: center;">
+          <div class="title">Seed Inventory<span class="weights">0.0 | 0.0</span></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="seeditems">
+            
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="exitbutton">Exit</div>
+        </div>
+      </div>
+      <div class="growpreview">
+        <div class="row">
+          <div class="col-12">
+            <div class="growtitle">Grow List</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 growitems">
+            <!--<div class="grow-seeditem">Seed Name Blah Kush<span class="growprevqty badge badge-dark">1</span></div>-->
+          </div>
+        </div>
+      </div>
+      <div class="warningpanel">
+        <div class="row">
+          <div class="col-12">
+            <span class="warntext"></span>
+          </div>
+        </div>
+      </div>
+      <div class="plantpanel">
+        <div class="row">
+          <div class="col-12">
+            <button type="button" class="btn btn-success buttonplant">Plant Weed Crop</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fieldProgressContainers">
+        
+    </div>
+    <div class="harvestIconsContainer"><div>
+    <div class="mushroomProgressContainers"></div>
+    <div class="tunerContainer container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <span class="tunerDescriptor">Boost (Normal | High)</span>
+          <p class="tunerLabel">Current value: <span id="currentBoost">0</span></p>
+          <input type="range" min="0" max="10" step="1" class="tunerSlider" id="boostSlider">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <span class="tunerDescriptor">Acceleration (Normal | Faster)</span>
+          <p class="tunerLabel">Current value: <span id="currentAcceleration">0</span></p>
+          <input type="range" min="0" max="10" step="1" class="tunerSlider" id="accelerationSlider">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <span class="tunerDescriptor">Gear Change (Normal | Faster)</span>
+          <p class="tunerLabel">Current value: <span id="currentGearChange">0</span></p>
+          <input type="range" min="0" max="9" step="1" class="tunerSlider" id="gearSlider">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <span class="tunerDescriptor">Braking (Rear | Front)</span>
+          <p class="tunerLabel">Current value: <span id="currentBraking">0</span></p>
+          <input type="range" min="0" max="10" step="1" class="tunerSlider" id="brakingSlider">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <span class="tunerDescriptor">Drive Train (Rear | Front)</span>
+          <p class="tunerLabel">Current value: <span id="currentDriveTrain">0</span></p>
+          <input type="range" min="0" max="10" step="1" class="tunerSlider" id="drivetrainSlider">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 mt-4">
+          <button class="btn btn-info float-right btnTunerApply" style="margin-left: 3px;">Apply Mods</button>
+          <button class="btn btn-info float-right btnTunerReset" style="margin-left: 3px;">Reset to Factory</button>
+          <button class="btn btn-info btnTunerCancel">Exit Tuner</button>
+        </div>
+      </div>
+    </div>
+    <div class="mineProgressContainer progress vertical">
+      <div class="progress-bar rockProgress" style="width: 100%; height: 100%;" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><span class="vtext rockProgText"></span></div>
+    </div>
+    <div class="biohazard"></div>
+    
+    <div class="genericInfoPanel container-fluid">
+      <div class="row bgtitle">
+        <div class="col">
+          <div class="ginfo-title"></div>
+        </div>
+      </div>
+      <div class="row mt-2" style="max-height: 550px">
+        <div class="col">
+          <div class="ginfo-body p-2"></div>
+        </div>
+      </div>
+      <div class="row mt-1 p-2">
+        <div class="col">
+          <button class="btn btn-sm btn-secondary btn-ginfoExit float-right">Exit</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container newsOverlayPanel">
+      <div class="row p-2">
+        <div class="col newsOverlayAnchor">
+          Active overlay:  Some bullshit, Blah blah: 1.0
+        </div>
+      </div>
+    </div>
+
+    <div class="container newsCameraHelp">
+      <div class="row p-2">
+        <div class="col" style="color: skyblue">
+          Camera Help
+        </div>
+      </div>
+      <div class="row mt-2 p-2">
+        <div class="col">
+          <div class="row">
+            <div class="col-4" style="color: #d6d6d6;">
+              Key/Command
+            </div>
+            <div class="col-8" style="color: #d6d6d6;">
+              Action
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              E
+            </div>
+            <div class="col-8">
+              News Camera
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              M
+            </div>
+            <div class="col-8">
+              Movie Camera
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              /newsoverlay [text]
+            </div>
+            <div class="col-8">
+              Change the news overlay text.  You can also use /newscam [text] when starting the camera to set this text.
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col" style="color: #d6d6d6;">
+              Movie Camera Specific
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-4">
+              Num 8/Num 5
+            </div>
+            <div class="col-8">
+              Cycle Lens Filters
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              Num -/Num +
+            </div>
+            <div class="col-8">
+              Decrease/Increase Lens Filter Strength
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+  </html>

@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+    <link href="/html/jqueryui/jquery-ui.theme.min.css" rel="stylesheet" type="text/css">
+    <link href="/html/jqueryui/jquery-ui.structure.min.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="cuff.css" rel="stylesheet" type="text/css" />
+    <script src="cuff.js" type="text/javascript"></script>
+  </head>
+<body>
+  <!--<div id="breakout_dialog" style="display:none;">
+      <p><label id="breakout_input_label" for="breakout_input_text">Who do you want to break out?</label><br/><input id="breakout_input_text" type="text" class="form-field" maxlength="500"></p>
+      <p><button id="breakout_button_ok" class="ui-widget ui-button ui-corner-all buttonsec">Break Out!</button><button id="breakout_button_cancel" class="ui-widget ui-button ui-corner-all buttonsec">Cancel</button></p>
+  </div>-->
+  <div id="timercontainer" style="display: none;">
+    <span class="pbtimer" id="pbtimer"></span>
+  </div>
+  <div class="prisonlist">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12" style="background-color: black;">
+          <span class="headertext">Prison Roster</span>
+        </div>
+      </div>
+      <div class="row plistrow">
+        <div class="col-12">
+          <div class="rosterlist">
+            
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <button class="exitbutton p-2">Exit</button>
+      </div>
+    </div>
+  </div>
+  <!--<script>
+    $("#breakout_button_ok").button();
+    $("#breakout_button_cancel").button();
+  </script>-->
+</body>
+</html>

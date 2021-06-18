@@ -1,0 +1,8 @@
+.voiceimg {
+  background-image: url('voiceover.png');
+  position: fixed;
+  bottom: 1.9%;
+  left: 88.7%;
+  width:25px;
+  height: 35px;
+}

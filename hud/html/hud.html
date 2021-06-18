@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <script src="hud.js"></script>
+    <link rel="stylesheet" href="hud.css">
+  </head>
+
+  <body>
+    <div class="watermark">Los Angeles Roleplay Beta</div>
+    
+    <div id="checkEngineContainer" style="display:none;">
+      <header>
+        <img src="images/checkengine.png" class="blink-image" alt="header">
+      </header>
+    </div>
+    <div id="lowFuelContainer" style="display:none;">
+      <header>
+        <img src="images/lowfuel.png" class="blink-image" alt="header">
+      </header>
+    </div>
+    <div id="seatbeltContainer" style="display:none;">
+      <header>
+        <img src="images/seatbelt.png" alt="header">
+      </header>
+    </div>
+
+    <div id="nitrousLevel" style="display:none;"></div>
+      <div id="nitrousbar" style="display:none;"></div>
+      <div class="nitroustext" style="display:none;">NOS</div>
+    </div>
+
+    <div id="vitalsbars">
+      <div id="vitalbackground" style="display:none;"></div>
+      <div id="hungerbar" style="display:none;"></div>
+      <div id="thirstbar" style="display:none;"></div>
+    </div>
+
+    <script>
+      $("#hungerbar").progressbar({
+        value: 50,
+        create: function(event, ui) {$(this).find('.ui-widget-header').css({'background-color':'yellow'})}
+      });
+      $("#thirstbar").progressbar({
+        value: 25,
+        create: function(event, ui) {$(this).find('.ui-widget-header').css({'background-color':'skyblue'})}
+      });
+      $("#nitrousbar").progressbar({
+        value: 0,
+        create: function(event, ui) {$(this).find('.ui-widget-header').css({'background-color':'#0c6eb7'})}
+      });
+    </script>
+
+  </body>
+</html>

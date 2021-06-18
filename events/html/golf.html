@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <link href="golf.css" rel="stylesheet" type="text/css" />
+    <script src="golf.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <center>
+    <div id="golfScoreboard" style="display: none;">
+      <div class="title">SCORECARD</div>
+      <div class="titleDesc">Los Angeles Golf Club</div>
+      <table id="scoreTable">
+        <thead>
+          <tr>
+            <th class="row-scorename">Hole</th>
+            <th class="row-hole">1</th>
+            <th class="row-hole">2</th>
+            <th class="row-hole">3</th>
+            <th class="row-hole">4</th>
+            <th class="row-hole">5</th>
+            <th class="row-hole">6</th>
+            <th class="row-hole">7</th>
+            <th class="row-hole">8</th>
+            <th class="row-hole">9</th>
+            <th class="row-holetotal">Total</th>
+          </tr>
+          <tr>
+            <th class="row-scorename">Par</th>
+            <th class="row-par">5</th>
+            <th class="row-par">4</th>
+            <th class="row-par">3</th>
+            <th class="row-par">4</th>
+            <th class="row-par">4</th>
+            <th class="row-par">3</th>
+            <th class="row-par">4</th>
+            <th class="row-par">5</th>
+            <th class="row-par">4</th>
+            <th class="row-partotal">36</th>
+          </tr>
+        </thead>
+        <tr id="row1">
+          <td class="row-name">Chris Morgan</td>
+          <td class="row-numDark">1</td>
+          <td class="row-numDark">2</td>
+          <td class="row-numDark">3</td>
+          <td class="row-numDark">4</td>
+          <td class="row-numDark">5</td>
+          <td class="row-numDark">6</td>
+          <td class="row-numDark">7</td>
+          <td class="row-numDark">8</td>
+          <td class="row-numDark">9</td>
+          <td class="row-totalDark">10</td>
+        </tr>
+        <tr id="row2">
+          <td class="row-name">Matt McDaniel</td>
+          <td class="row-numLight">1</td>
+          <td class="row-numLight">2</td>
+          <td class="row-numLight">3</td>
+          <td class="row-numLight">4</td>
+          <td class="row-numLight">5</td>
+          <td class="row-numLight">6</td>
+          <td class="row-numLight">7</td>
+          <td class="row-numLight">8</td>
+          <td class="row-numLight">9</td>
+          <td class="row-totalLight">10</td>
+        </tr>
+        <tr id="row3">
+          <td class="row-name">Roger Clayton</td>
+          <td class="row-numDark">1</td>
+          <td class="row-numDark">2</td>
+          <td class="row-numDark">3</td>
+          <td class="row-numDark">4</td>
+          <td class="row-numDark">5</td>
+          <td class="row-numDark">6</td>
+          <td class="row-numDark">7</td>
+          <td class="row-numDark">8</td>
+          <td class="row-numDark">9</td>
+          <td class="row-totalDark">10</td>
+        </tr>
+        <tr id="row4">
+          <td class="row-name">Matt Webb</td>
+          <td class="row-numLight">1</td>
+          <td class="row-numLight">2</td>
+          <td class="row-numLight">3</td>
+          <td class="row-numLight">4</td>
+          <td class="row-numLight">5</td>
+          <td class="row-numLight">6</td>
+          <td class="row-numLight">7</td>
+          <td class="row-numLight">8</td>
+          <td class="row-numLight">9</td>
+          <td class="row-totalLight">10</td>
+        </tr>
+        <tr id="row5">
+          <td class="row-name">Rudolph Konig</td>
+          <td class="row-numDark">1</td>
+          <td class="row-numDark">2</td>
+          <td class="row-numDark">3</td>
+          <td class="row-numDark">4</td>
+          <td class="row-numDark">5</td>
+          <td class="row-numDark">6</td>
+          <td class="row-numDark">7</td>
+          <td class="row-numDark">8</td>
+          <td class="row-numDark">9</td>
+          <td class="row-totalDark">10</td>
+        </tr>
+        <tr id="row6">
+          <td class="row-name">Micheal Mills</td>
+          <td class="row-numLight">1</td>
+          <td class="row-numLight">2</td>
+          <td class="row-numLight">3</td>
+          <td class="row-numLight">4</td>
+          <td class="row-numLight">5</td>
+          <td class="row-numLight">6</td>
+          <td class="row-numLight">7</td>
+          <td class="row-numLight">8</td>
+          <td class="row-numLight">9</td>
+          <td class="row-totalLight">10</td>
+        </tr>
+        <tr id="row7">
+          <td class="row-name">Snuffleupagus Supercalifragilisticexpialidocious</td>
+          <td class="row-numDark">1</td>
+          <td class="row-numDark">2</td>
+          <td class="row-numDark">3</td>
+          <td class="row-numDark">4</td>
+          <td class="row-numDark">5</td>
+          <td class="row-numDark">6</td>
+          <td class="row-numDark">7</td>
+          <td class="row-numDark">8</td>
+          <td class="row-numDark">9</td>
+          <td class="row-totalDark">10</td>
+        </tr>
+        <tr id="row8">
+          <td class="row-name">Jack McFitzPatrick</td>
+          <td class="row-numLight">1</td>
+          <td class="row-numLight">2</td>
+          <td class="row-numLight">3</td>
+          <td class="row-numLight">4</td>
+          <td class="row-numLight">5</td>
+          <td class="row-numLight">6</td>
+          <td class="row-numLight">7</td>
+          <td class="row-numLight">8</td>
+          <td class="row-numLight">9</td>
+          <td class="row-totalLight">10</td>
+        </tr>      
+      </table>
+    </div>
+  </body>
+</html>

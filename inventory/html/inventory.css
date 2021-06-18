@@ -1,0 +1,422 @@
+body {
+	font-family: "Segoe UI", "Segoe UI Symbol", "Segoe UI Emoji",  Arial, sans-serif;
+	background-color: transparent; /* change to TRANSPARENT */
+}
+
+::-webkit-scrollbar-button{ 
+	display: block; 
+	height: 13px; 
+	border-radius: 0px; 
+	background-color: rgb(90, 90, 90); 
+}
+::-webkit-scrollbar-button:hover{ 
+	background-color: rgb(133, 131, 131); 
+} 
+::-webkit-scrollbar-thumb{ 
+	background-color: #5badd9; 
+} 
+::-webkit-scrollbar-thumb:hover{ 
+	background-color: rgb(63, 132, 153); 
+} 
+::-webkit-scrollbar-track{ 
+	background-color: #484848; 
+} 
+::-webkit-scrollbar-track:hover{ 
+	background-color: rgb(90, 90, 90); 
+} 
+::-webkit-scrollbar{ 
+	width: 4px;
+}
+
+#invContainer{
+	display: none;
+	opacity: 0.99;
+  background-color: #354257;
+  border-radius: 4px;
+  position: fixed;
+  right: 5%;
+  top: 10%;
+  width: 400px;
+	height: 650px;
+}
+.titlecont{
+  padding: 4px;
+  background-color: #0E1621;
+  text-align:center;
+}
+.title{
+  color: skyblue;
+}
+.inventoryMenu{
+  width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	margin-right: 6px;
+}
+.nav-link{
+  color: skyblue;
+}
+.nav-link:hover{
+  color: white;
+}
+.nav-link.nl-active{
+  color: yellow;
+  border: 0px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-radius: 0px 0px 7px 7px;
+}
+.invitem{
+  font-size: 14px;
+  color: skyblue;
+  padding: 4px;
+  border: 1px solid #354257;
+}
+.blkback{
+  background-color: black;
+}
+.itemcontainer{
+  border-bottom: 1px solid #354257;
+	margin-bottom: 1px;
+	margin-right: 4px;
+	padding-bottom:8px;
+	border: 1px solid #3c495f;
+	border-radius: 6px;
+	background-color: #303b4e;
+}
+.itemcontainer:hover{
+	border: 1px solid #475770;
+	border-radius: 6px;
+	cursor: default;
+	
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#354257+1,324056+100 */
+	background: #2d3849; /* Old browsers */
+	background: -moz-linear-gradient(top,  #252f3d 1%, #2b3649 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #252f3d 1%,#2b3649 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #252f3d 1%,#2b3649 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#252f3d', endColorstr='#2b3649',GradientType=0 ); /* IE6-9 */
+}
+.dropbutton{
+  border: 1px solid black;
+  float: right;
+  padding: 3px;
+  height: 22px;
+  width: 20px;
+  color: #f2f2f2;
+  line-height: 1px;
+  font-size: 12px;
+  margin-top: 1px;
+  margin-right: 4px;
+}
+.givebutton{
+  border: 1px solid black;
+  float: right;
+  padding: 3px;
+  height: 22px;
+  width: 20px;
+  color: #f2f2f2;
+  line-height: 1px;
+  font-size: 12px;
+  margin-top: 1px;
+  margin-right: 4px;
+}
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e2042d+0,b5032a+67,6d0019+100 */
+.red-grad{
+  background: #e2042d; /* Old browsers */
+  background: -moz-linear-gradient(top,  #e2042d 0%, #b5032a 67%, #6d0019 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #e2042d 0%,#b5032a 67%,#6d0019 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #e2042d 0%,#b5032a 67%,#6d0019 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2042d', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
+}
+.blue-grad{
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0488e0+1,2d95b5+64,00517c+100 */
+  background: #0488e0; /* Old browsers */
+  background: -moz-linear-gradient(top,  #0488e0 1%, #2d95b5 64%, #00517c 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #0488e0 1%,#2d95b5 64%,#00517c 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #0488e0 1%,#2d95b5 64%,#00517c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0488e0', endColorstr='#00517c',GradientType=0 ); /* IE6-9 */
+}
+.qspinner{
+  float: right;
+  font-size: 12px;
+}
+.btn{
+  margin-top: 4px;
+  min-width: 0.7rem !important;
+  width: 0.7rem !important;
+  height: 1.2rem !important;
+  font-size: 12px !important;
+  line-height: 1px !important;
+}
+.btn > strong{
+  margin-left: -4px;
+}
+.qtyinput input[type="text"]{
+  border: 1px solid #303030 !important;
+  /*width: 1.0rem !important;
+	min-width: 1.0rem !important;*/
+	height: 1.2rem !important;
+  margin-top: 4px;
+  background-color: #303030;
+	color: #7d8790;
+}
+.qtydisplay{
+  color: #fffded;
+  float: right;
+}
+.itemname{
+	float: left;
+}
+.giveinfo{
+  float: right;
+  font-size: 12px;
+  color: #fffded;
+}
+
+/* drag n drop inv */
+.dinvContainer{
+	display: none;
+  background-color: #161616;
+  position: fixed;
+  opacity: 0.9;
+  width: 675px;
+  height: 500px;
+}
+.bodydroptarget{
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+.dinv-header{
+	background-color: #3d3d3d; /*change*/
+	color: #777777;
+  height: 22px;
+  text-align: center;
+}
+.dnav-link{
+  color: skyblue;
+}
+.dnav-link:hover{
+  color: white;
+}
+.dnav-link.nl-active{
+  color: yellow;
+  border: 0px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-radius: 0px 0px 7px 7px;
+}
+.dinv-invmenu{
+  border: 1px solid #0E1621;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.dinv-item{
+  display: inline-block;
+  margin: 8px;
+  border: 1px solid #252525;
+  width: 90px;
+  height: 122px;
+}
+.dinv-item-image{
+  width: 100%;
+  height: 100%;
+}
+.dinv-image-center{
+	position: relative;
+	margin: 0 auto;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  width: 64px;
+  height: 64px;
+}
+.sortable-ghost {
+	opacity: .6;
+	background-color: #2598c5;
+}
+.dinv-text{
+	padding:4px;
+	color: #a0a0a0;
+	font-size: 12px;
+	float: left;
+}
+.tooltip-inner {
+	white-space:pre-line;
+}
+.dinv-text-overlay{
+	display: none;
+	width: 100%;
+	height: 100%;
+	color: skyblue;
+	font-size: 12px;
+}
+.attachment-text-overlay{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	color: skyblue;
+  font-size: 10px;
+}
+.trans-up{
+	background-image: url("images/trans-up.png");
+	background-size: cover;
+	width: 20px;
+	height: 20px;
+	float: right;
+}
+.trans-down{
+	background-image: url("images/trans-down.png");
+	background-size: cover;
+	width: 20px;
+	height: 20px;
+	float: right;
+}
+.resizer-handle{
+	opacity: 0.85;
+	background-image: url("images/resizer.png");
+	background-size: cover;
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	bottom: 3px;
+	right: 3px;
+}
+/* context menu */
+#contextMenuGeneral{
+	color: #69aec9;
+	font-size: 12px;
+	padding: 2px;
+	background-color: #252f3d;
+}
+#contextMenuGeneral > li:hover{
+	background-color: #3a495e;
+}
+#contextMenuGeneral > li{
+	padding: 3px;
+}
+#contextMenuGeneral > li > a, a:active, a:hover{
+	color: #69aec9;
+	cursor: default;
+	text-decoration: none;
+}
+
+/* trunks / house transfer */
+#transferContainer{
+	width: 650px;
+	height: 425px;
+	background-image: url("hex-background.png");
+	background-repeat: repeat-x repeat-y;
+	background-color: #1B1B1B;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	margin:auto;
+	padding: 10px;
+	left:30%;
+	right:auto;
+	top:22%;
+	bottom:auto;
+	position:fixed;
+}
+.transfer.title{
+	color: skyblue;
+	background-color: rgb(51, 51, 51);
+	padding-left: 6px;
+}
+.transferbox{
+	width:275px;
+	height: 300px;
+	border: 1px solid #016f91;
+	background-color: #454545;
+	color: #8E8E8E;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	padding:2px;
+	font-size: 14px;
+}
+.transferItemLeft{
+	color: #8E8E8E;
+	background-color: transparent;
+}
+.transferItemLeft.selected{
+	color: rgb(173, 172, 172);
+	background-color: #1B1B1B;
+}
+.transferItemRight{
+	color: #8E8E8E;
+	background-color: transparent;
+}
+.transferItemRight.selected{
+	color: rgb(173, 172, 172);
+	background-color: #1B1B1B;
+}
+.transferExitButton{
+	display: flex;
+	align-items: center;
+	font-size: 18px;
+	margin: 6px;
+	color: white;
+	height: 35px;
+	width: 300px;
+	background: #1B1B1B;
+	padding-left: 7px;
+}
+.transferExitButton:hover{
+	background: #25C3C5;
+	color: white;
+}
+#trans_right{
+	width: 24px;
+	height: 18px;
+	background-image: url("trans_right.png");
+}
+#trans_right:hover{
+	background-image: url("trans_right_disabled.png");
+}
+#trans_left{
+	width: 24px;
+	height: 18px;
+	background-image: url("trans_left.png");
+}
+#trans_left:hover{
+	background-image: url("trans_left_disabled.png");
+}
+.transqty {
+	border: 0px solid #c9b7a2;
+	background: #484b52;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	color: #c9b7a2;
+	-webkit-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(000,000,000,0.7) 0 1px 1px;
+	-moz-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(000,000,000,0.7) 0 1px 1px;
+	box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(000,000,000,0.7) 0 1px 1px;
+	padding:8px;
+	margin-bottom:20px;
+	width:280px;
+}
+.worldglobe{
+	display: none;
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.fakeTooltip{
+	display: none;
+	position: fixed;
+	background-color: #2b2d31;
+	border: 1px solid #393c41;
+	color: #858585;
+	font-size: 12px;
+	padding: 2px;
+}

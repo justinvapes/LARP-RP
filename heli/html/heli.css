@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@500&display=swap');
+body{
+  background: transparent;
+}
+.heliTargContainer{
+  display: none;
+  font-family: "Yantramanav", sans-serif;
+  font-size: 25px;
+  color: #bababa;
+  position: fixed;
+  background: transparent;
+  bottom: 10px;
+  width: 393px;
+  height: 94px;
+  left: 50%;
+  transform: translateX(-186px);
+  line-height: 29px;
+}

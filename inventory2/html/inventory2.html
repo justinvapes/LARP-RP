@@ -1,0 +1,94 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/css/themes/bootstrap.css" integrity="sha512-eSjlj23qCNm7hmEQiXiJGCxLVT3weZ47TdIESCNFm8LwNDBtmRAbdDXwkKLLA5HPQIR1yl9JYO0wQG6gIPJoRQ==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@coreui/coreui-pro@2.1.14/dist/css/themes/coreui-dark.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/css/alertify.css" integrity="sha512-MpdEaY2YQ3EokN6lCD6bnWMl5Gwk7RjBbpKLovlrH6X+DRokrPRAF3zQJl1hZUiLXfo2e9MrOt+udOnHCAmi5w==" crossorigin="anonymous" />
+  <link href="inventory2.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div id="masterContainer" class="masterContainer">
+    <div class="invContainer container pb-2">
+      <div class="row header">
+        <div class="col-12"><div class="invh-text">Inventory</div></div>
+      </div>
+      <div class="row" style="height: 85%">
+        <div class="col-12">
+          <div class="col invAnchor d-flex flex-wrap mx-auto">
+
+          </div>
+        </div>
+      </div>
+      <!--<div class="row mt-2">
+        <div class="col-12">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link dnav-link nl-active" data-id="1" href="#">General</a>
+            </li>
+            <li class="dnav-item">
+              <a class="nav-link dnav-link" data-id="2" href="#">Food</a>
+            </li>
+            <li class="dnav-item">
+              <a class="nav-link dnav-link" data-id="3" href="#">Narcotics</a>
+            </li>
+            <li class="dnav-item">
+              <a class="nav-link dnav-link" data-id="4" href="#">Weapons</a>
+            </li>
+          </ul>
+        </div>
+      </div>-->
+      <!--<div class="resizer-handle ui-resizable-handle ui-resizable-se"></div>-->
+    </div>
+    <div class="invContainerBlocker">
+      <div class="blockerSpinner spinner-border text-info"></div>
+    </div>
+    
+    <div class="targetContainer container pb-2">
+      <div class="row header">
+        <div class="col-12"><div class="invh-text targetContainerTitle">Container</div></div>
+      </div>
+      <div class="row" style="height: 85%">
+        <div class="col-12">
+          <div class="col targetAnchor d-flex flex-wrap mx-auto">
+
+          </div>
+        </div>
+      </div>
+      <!--<div class="row mt-2">
+        <div class="col-12">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link dnav-link nl-active" data-id="1" href="#">General</a>
+            </li>
+            <li class="dnav-item">
+              <a class="nav-link dnav-link" data-id="2" href="#">Food</a>
+            </li>
+            <li class="dnav-item">
+              <a class="nav-link dnav-link" data-id="3" href="#">Narcotics</a>
+            </li>
+            <li class="dnav-item">
+              <a class="nav-link dnav-link" data-id="4" href="#">Weapons</a>
+            </li>
+          </ul>
+        </div>
+      </div>-->
+      <!--<div class="resizer-handle ui-resizable-handle ui-resizable-se"></div>-->
+    </div>
+    <div class="targetContainerBlocker">
+      <div class="blockerSpinner spinner-border text-info"></div>
+    </div>
+  </div>
+
+  <div class="fakeTooltip"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="bootstrap-input-spinner.js" type="text/javascript"></script>
+  <script src="https://kit.fontawesome.com/5b6bfad379.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@2.1.16/dist/js/coreui.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/alertify.min.js" type="text/javascript"></script>
+  <script src="inventory2.js" type="text/javascript"></script>
+</body>
+</html>

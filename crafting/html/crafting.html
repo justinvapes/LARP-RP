@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js" type="text/javascript"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.css" rel="stylesheet" type="text/css"/>
+    <script src="https://kit.fontawesome.com/0683b7184f.js"></script>
+    <link href="crafting.css" rel="stylesheet" type="text/css" />
+    <script src="crafting.js" type="text/javascript"></script>
+  </head>
+  
+  <body>
+    <div class="skillcontainer container">
+      <div class="skills">
+        
+      </div>
+      <div class="ssktext">Press <span style='color: white;'>H</span> to toggle skill panel</div>
+    </div>
+
+    <div class="wsContainer" id="wsContainer">
+      <div class="container-fluid h-100">
+        <div class="row ws-header p-1">
+          <div class="col">
+            Crafting Station
+          </div>
+          <div class="col">
+            <button class="btn btn-dark btn-sm ws-exitbutton float-right"><i class="fas fa-times"></i></button>
+          </div>
+        </div>
+        <div class="row justify-content-center" style="height: 92%">
+          <div class="col-4">
+            <div class="row craftitems"></div>
+          </div>
+          <div class="col-8 ws-craftdetails">
+            <div class="w-100 h-100 p-2">
+              <div class="ws-materials"></div>
+              <div class="ws-buttoncontainer text-center">
+                <button class="ws-craftbutton btn btn-dark">Not enough materials to Craft</button>
+              </div>
+            </div>        
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  </html>

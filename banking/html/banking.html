@@ -1,0 +1,389 @@
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="https://kit.fontawesome.com/5b6bfad379.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@2.1.16/dist/js/coreui.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@coreui/coreui-pro@2.1.14/dist/css/themes/coreui-dark.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/alertify.min.js" integrity="sha512-JnjG+Wt53GspUQXQhc+c4j8SBERsgJAoHeehagKHlxQN+MtCCmFDghX9/AcbkkNRZptyZU4zC8utK59M5L45Iw==" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/css/alertify.css" integrity="sha512-MpdEaY2YQ3EokN6lCD6bnWMl5Gwk7RjBbpKLovlrH6X+DRokrPRAF3zQJl1hZUiLXfo2e9MrOt+udOnHCAmi5w==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/css/themes/bootstrap.css" integrity="sha512-eSjlj23qCNm7hmEQiXiJGCxLVT3weZ47TdIESCNFm8LwNDBtmRAbdDXwkKLLA5HPQIR1yl9JYO0wQG6gIPJoRQ==" crossorigin="anonymous" />
+  <link href="banking.css" rel="stylesheet" type="text/css" />
+  <script src="banking.js" type="text/javascript"></script>
+</head>
+<body>
+
+  <div class="atm container" id="atm" style="display: none">
+    <div class="row">
+      <div class="col">
+        <div class="atmheader">
+          <span id="headtext">Bank of Southern California</span>
+          <button class="btn btn-dark btn-sm float-right" id="exitatm">X</button>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <div id="tips" style="color: slategray;">
+          Enter an amount and select Withdraw or Deposit to complete your transaction.
+        </div>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col">
+        <div id="transform">
+          <div class="row">
+            <div class="col">
+              <label for="amount">Amount</label>
+              <input id="amount" name="amount" class="form-control" size="20" type="text" value="" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col">
+              <button class="btn btn-success" id="withdraw">Withdraw</button>
+              <button class="btn btn-info" id="deposit">Deposit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col">
+        Balance: <span id="balance" style="color:springgreen;">$0</span>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col">
+        <div id="errortext" style="color: #e67d7d;"></div>
+      </div>
+    </div>
+    <div class="foldup">
+      <div class="row mt-2">
+        <div class="col-7">
+          <button class="btn btn-sm btn-dark float-right" data-target="#bankSettingsFolding" data-toggle="collapse" type="button" aria-expanded="false" aria-controls="bankSettingsFolding">
+            Account Preferences<i class="fad fa-chevron-double-down ml-2"></i>
+          </button>
+        </div>
+        <div class="col-5">
+          <button class="btn btn-sm btn-dark float-right" data-target="#giveAccountFolding" data-toggle="collapse" type="button" aria-expanded="false" aria-controls="giveAccountFolding">
+            Donate to Account<i class="fad fa-chevron-double-down ml-2"></i>
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="collapse" id="bankSettingsFolding">
+            <div class="row mt-2">
+              <div class="col">
+                <span style="color: slategrey">Daily Check Deposit Type</span>
+                <div class="mt-1">
+                  <label class="radio-inline" style="width: 150px"><input class="dailyCheckType" type="radio" name="dailyCheckType" data-val="1" checked>Pocket Deposit</label>
+                  <label class="radio-inline" style="width: 150px"><input class="dailyCheckType" type="radio" name="dailyCheckType" data-val="2">Bank Deposit</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col">
+          <div class="collapse" id="giveAccountFolding">
+            <div class="row mt-2">
+              <div class="col">
+                <span style="color: slategrey">To donate to an account, enter the account number and amount below.</span>
+              </div>
+            </div>
+            <div class="row mt-1">
+              <div class="col">
+                <label for="accountNumber mt-1" style="width: 100%">Account Number</label>
+                <input id="accountNumber" name="accountNumber" class="form-control" size="10" type="number" value="" style="appearance: none;">
+              </div>
+            </div>
+            <div class="row mt-1">
+              <div class="col-6">
+                <label for="accountDepositAmount">Amount</label>
+                <input id="accountDepositAmount" name="accountDepositAmount" class="form-control" size="10" type="number" value="0" style="appearance: none;">
+              </div>
+              <div class="col-6">
+                <label for="accountDepositMessage" style="width: 100%">Message (Optional)</label>
+                <input id="accountDepositMessage" name="accountDepositMessage" class="form-control" size="10" type="text" maxlength="128" placeholder="128 Characters maximum.">
+              </div>
+            </div>
+            <div class="row mt-1">
+              <div class="col">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input accountDepositAnon" id="accountDepositAnon">
+                  <label class="custom-control-label" for="accountDepositAnon" style="width: 100%">Anonymous Donation</label>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-6">
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="radioDepositFromBank" name="radioDonationType" class="custom-control-input radioButtonAccountDepositFrom" data-type="1" checked>
+                  <label class="custom-control-label" for="radioDepositFromBank" style="width: 100%">Deposit from Bank</label>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="radioDepositFromCharacter" name="radioDonationType" class="custom-control-input radioButtonAccountDepositFrom" data-type="2">
+                  <label class="custom-control-label" for="radioDepositFromCharacter" style="width: 100%">Deposit from Person</label>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col">
+                <button class="btn btn-success btnSubmitAccountDeposit float-right">Submit Donation <i class="fas fa-arrow-square-right ml-1"></i></button>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col">
+                <div class="bankAtmStatusText"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid bankingContainer">
+    <div class="dragArea">
+
+      <div class="loading">
+        <span class="loadingText">Connecting</span>
+        <span class="spinner-border text-success ml-2"></span>
+      </div>    
+      
+      <div class="evcontainer" id="evTemplate" style="display: none;">
+        <div class="row">
+          <div class="col">
+            <div class="dragHeader" id="evDragHeader"><button class="accMgr-Close float-right btn btn-dark btn-sm">X</button></div>
+          </div>
+        </div>
+        <div class="row evtitle p-2">
+          <div class="col">
+            <div class="titleContent"></div>
+          </div>
+        </div>
+        <div class="row evmenu mt-3">
+          <div class="col evContentAnchor">
+            
+          </div>
+        </div>
+        <div class="resizer-handle ui-resizable-handle ui-resizable-se"></div>
+      </div>
+      
+      <div class="accountManager mt-3">
+        <div class="row">
+          <div class="col">
+            <div class="accMgr-header p-2">Account Manager<button class="accMgr-Close float-right btn btn-dark btn-sm">X</button></div>
+          </div>
+        </div>
+        
+        <div class="row ml-1">
+          <div class="col-6">
+            <small id="hoverText" class="hoverText form-text text-muted"></small>
+          </div>
+          <div class="col-6">
+            <small id="hoverText-right" class="hoverText form-text text-muted"></small>
+          </div>
+        </div>
+        <div class="row accmenu mt-1">
+          <div class="col accMgr-contentAnchor m-1">
+            <div class="row" style="height: 95%">
+              <div class="col-6 accMgr-accountList p-2">
+                              
+              </div>
+              <div class="col-6 accMgr-accountDetails">
+                <div class="row">
+                  <div class="col">
+                    <div class="accMgr-accountMembers mb-2">
+                      
+                      <div class="row">
+                        <div class="col-4">
+                          <div class="accMgr-addMemberByName">
+                            <input id="textMemberAdd" class="form-control" type="text" placeholder="Enter character name or ID" style="width: 200px" aria-describedby="addMemberHelp">
+                            <small id="addMemberHelp" class="form-text text-muted">Add a member to your bank account.</small>
+                          </div>
+                        </div>
+                        <div class="col-4">
+                          <button class="btn btn-dark mt-2 btnAddMemberToAccount"><span class="btnAddMemberToAccountText">Add</span> <i class="fas fa-arrow-circle-right" style="color: #77f182;"></i></button>
+                        </div>
+                        <div class="col-4">
+                          <button class="btn btn-danger mt-2 btnDeleteAccount">Delete Account</button>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col">
+                          <div class="accMgr-memberList p-2 mt-2">
+  
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="row mt-2">
+                        <div class="col">
+                          <div class="accMgr-memberPermissions p-2">
+                            <div class="card">
+                              <div class="card-body">
+                                <div class="card-title" style="font-style: italic">
+                                  Permissions
+                                </div>
+                                <div class="card-text">
+                                  <div class="row">
+                                    <div class="col">
+                                      <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input memberPermCb memberPerm-deposit" id="customCheck1" disabled>
+                                        <label class="custom-control-label" for="customCheck1" style="width: 100%">Deposit into Account</label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row mt-2">
+                                    <div class="col">
+                                      <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input memberPermCb memberPerm-withdraw" id="customCheck2" disabled>
+                                        <label class="custom-control-label" for="customCheck2" style="width: 100%">Withdraw from Account</label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row mt-2">
+                                    <div class="col">
+                                      <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input memberPermCb memberPerm-viewBalance" id="customCheck3" disabled>
+                                        <label class="custom-control-label" for="customCheck3" style="width: 100%">View Account Balance</label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row mt-2">
+                                    <div class="col">
+                                      <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input memberPermCb memberPerm-viewActivity" id="customCheck4" disabled>
+                                        <label class="custom-control-label" for="customCheck4" style="width: 100%">View Account Activity</label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row mt-2">
+                                    <div class="col">
+                                      <small class="form-text text-muted">Click the <i class="fas fa-check mt-4" style="color: #add18a"></i> next to the member name to save once changed.</small>
+                                      <button class="btn btn-sm btnDeleteAccountMember float-right" disabled>Delete Member</button>
+                                      <button class="btn btn-sm btnDeleteAccountMemberCancel float-right" style="display: none">Cancel</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="row memberActions mt-1 p-2" style="height: 575px">
+                      <div class="col" style="height: 100%">
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <label for="dollarAmount" style="width: 100%" id="dollarAmountLabel">Withdraw</label>
+                              <input type="text" class="form-control" id="dollarAmount" aria-describedby="dollarAmountHelp" placeholder="Enter whole dollar amount"
+                                onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-4">
+                            <div class="custom-control custom-radio">
+                              <input type="radio" id="radioBankAccount" name="radioAccountType" class="custom-control-input radioButtonSourceOrDestType" data-type="1" checked>
+                              <label class="custom-control-label" for="radioBankAccount" id="labelRadioBankAccount" style="width: 100%">Withdraw to Bank Account</label>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="custom-control custom-radio">
+                              <input type="radio" id="radioFromCharacter" name="radioAccountType" class="custom-control-input radioButtonSourceOrDestType" data-type="2">
+                              <label class="custom-control-label" for="radioFromCharacter" id="labelRadioCharacter" style="width: 100%">Withdraw to Person</label>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="btn-group radioButtonsTransactionType float-right">
+                              <button type="button" class="btn btn-secondary rbTransType active" data-id="1">Withdraw</button>
+                              <button type="button" class="btn btn-secondary rbTransType" data-id="2">Deposit</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row mt-4">
+                          <div class="col">
+                            <button class="btn btn-success float-right btnConfirmTransaction">Confirm Transaction</button>
+                          </div>
+                        </div>
+                        <div class="row panelLeaveAccount">
+                          <div class="col">
+                            <button class="btn btn-danger btnLeaveAccount float-right">Leave Account</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-6 accMgr-accountActivity">
+                <div class="row">
+                  <div class="col">
+                    Account Activity
+                  </div>
+                </div>
+                <div class="row mt-2">
+                  <div class="col">
+                    <div class="tableActivityContainer">
+                      <table class="table table-dark activityTable">
+                        <thead>
+                          <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Message</th>
+                            <th scope="col">Date/Time</th>
+                          </tr>
+                        </thead>
+                        <tbody class="accMgr-accountActivityContentAnchor">
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="row actionbar">
+      <div class="col">
+        <div class="btn-group dropup">
+          <button class="btn btn-dark startbutton mt-1" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></button>
+          <div class="dropdown-menu">
+            <div class="startMenuItem p-2" data-id="1">Accounts Manager</div>
+            <div class="startMenuItem p-2" data-id="2">Open New Account</div>
+            <div class="startMenuItem p-2" data-id="3">Exit</div>
+          </div>
+        </div>
+      </div>
+      <div class="col mt-3">
+        <div class="statusText"></div>
+      </div>
+    </div>
+
+    <div class="hoverPanel p-2">
+      <div class="row">
+        <div class="col hoverPanelText"></div>
+      </div>
+    </div>
+  </div> 
+</body>
+</html>

@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  color: skyblue;
+  background: transparent;
+}
+
+#injured_overlay{
+  width: 45px;
+  height: 45px;
+  position: fixed;
+  top: auto;
+  bottom: 330px;
+  left: 50px;
+}
+#injured_text{
+  color: yellow;
+  font-size: 12px;
+}
+#sawprogress{
+  position: fixed;
+  width: 450px;
+  height: 40px;
+  top: auto;
+  bottom: 200px;
+  left: 38%;
+  display: none;
+}
+.injuryContainer{
+  font-size: 14px;
+  display: none;
+  background-color: #050D10;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  position: fixed;
+  right: 100px;
+  bottom: 100px;
+  opacity: 0.94;
+}
+.injuryHeader{
+  color: #adc5c8;
+  padding: 6px;
+  pointer-events: none;
+}
+.injuryTable{
+  border: 0px;
+}
+.injuriesList{
+  padding: 6px;
+  border:1px solid #162b36;
+  font-size: 14px;
+  margin-top: 4px;
+  width: 494px;
+  max-width: 494px;
+  height: 80px;
+}
+.injuryButtonContainer{
+  padding: 8px;
+  margin-top: 4px;
+}
+.btnInjuryAccept{
+  font-size: 13px;
+  line-height: 12px;
+  border-radius: 4px !important;
+}
+.injuryDetectedContainer{
+  margin-top: 4px;
+  padding: 6px;
+  width: 494px;
+  align-content: center;
+}
+.injuryType{
+  font-size: 13px;
+  background-color: #213c4e;
+  color: #d9e1fa;
+  width: 445px;
+  height: 55px;
+  resize: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+/*.injuryTableCell.selected{
+  filter: invert(50%) sepia(30%) saturate(4332%) hue-rotate(329deg) brightness(76%) contrast(83%);
+}
+.injuryTableCell:hover{
+  filter: hue-rotate(-160deg) saturate(25%) brightness(86%);
+}*/
+
+/*.xraycontainer {
+	background-attachment:fixed;
+	background:url(images/xrayhuman.png);
+	background-color: #12181F;
+	width: 198px;
+	height: 500px;
+}
+.xrspacer{
+  display: none;
+  position: fixed;
+  padding: 10px;
+  top:8%;
+  bottom:auto;
+  margin:auto;
+  left:auto;
+  right: 5%;
+  background-color: #12181F;
+}
+.xrheader{
+  color: skyblue;
+}
+.divTable{
+  display: table;
+	width: 100%;
+	height: 100%;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableRowHead {
+	display: table-row;
+	height: 75px;
+}
+.divTableRowShoulders {
+	display: table-row;
+	height: 50px;
+}
+.divTableRowArms {
+	display: table-row;
+	height: 120px;
+}
+.divTableRowHands {
+	display: table-row;
+	height: 58px;
+}
+.divTableRowLegs {
+	display: table-row;
+	height: 158px;
+}
+.divTableRowFeet {
+	display: table-row;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+}
+.divTableCell, .divTableHead {
+	display: table-cell;
+	padding: 3px 10px;
+}
+.divTableCell1 {
+	display: table-cell;
+	padding: 3px 10px;
+	width: 55px;
+}
+.divTableCell3 {
+	display: table-cell;
+	padding: 3px 10px;
+	width: 55px;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+	font-weight: bold;
+}
+.divTableFoot {
+	background-color: #EEE;
+	display: table-footer-group;
+	font-weight: bold;
+}
+.divTableBody {
+	display: table-row-group;
+}
+.dtcHighlight{
+  width: 100%;
+  height: 100%;
+}
+.dtcHighlight:hover{
+  background-color: rgba(135, 206, 250, 0.6);
+}
+.dtcSelected{
+  background-color: rgba(135, 206, 250, 0.4);
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  background: url(images/xrayselregion.png) no-repeat;
+}*/
+label {
+  display: inline-block;
+  width: 130px;
+}
+input {
+  display: inline-block;
+  margin: 8px;
+  background-color: #525252;
+  color: lightblue;
+  border: 1px solid #8c8b8b;
+}
+textarea{
+  display: inline-block;
+  margin: 8px;
+  background-color: #525252;
+  color: lightblue;
+  border: 1px solid #8c8b8b;
+  resize: none;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+select {
+  display: inline-block;
+  margin: 8px;
+}
+#injury{
+  font-weight: bold;
+}

@@ -1,0 +1,134 @@
+<html>
+<head>	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+	<link href="/html/jquery/jquery-ui.theme.min.css" rel="stylesheet" type="text/css">
+	<link href="/html/jquery/jquery-ui.structure.min.css" rel="stylesheet" type="text/css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.css">
+	<link href="inventory.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<ul id="contextMenuGeneral" class="dropdown-menu" role="menu" style="display:none">
+			<!--<li><a tabindex="-1" href="#" value="menu1:action-1">Use Item</a></li> -->
+			<!--<li><a tabindex="-1" href="#" value="menu1:action-2">Another action</a></li>
+			<li><a tabindex="-1" href="#" value="menu1:action-3">Something else here</a></li>
+			<li class="divider"></li>
+			<li><a tabindex="-1" href="#" value="action-4">Separated link</a></li>-->
+	</ul>
+
+	<div id="invContainer" class="container">
+		<div class="row">
+			<div class="col-12 titlecont">
+				<span class="title">Inventory</span>
+			</div>
+		</div>
+		<div class="row" style="height: 85%;">
+			<div class="col-12">
+				<div class="inventoryMenu mt-3">
+			
+				</div>
+			</div>
+		</div>
+		<div class="row mt-3">
+			<div class="col-12">
+				<ul class="nav">
+					<li class="nav-item">
+						<a class="nav-link nl-active" data-id="1" href="#">General</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-id="2" href="#">Food</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-id="3" href="#">Narcotics</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-id="4" href="#">Weapons</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- ddinv -->
+	<!--<div class="bodydroptarget"></div>-->
+	<div class="dinvContainer container pb-2">
+		<div class="row dinv-header">
+			<div class="col-12"><div class="dinvh-text">Inventory<div class="trans-up" data-toggle="tooltip" data-placement="bottom" title="Increase Opacity"></div><div class="trans-down" data-toggle="tooltip" data-placement="bottom" title="Decrease Opacity"></div></div></div>
+		</div>
+		<div class="row" style="height: 85%">
+			<div class="col-12">
+				<div class="dinv-invmenu">
+					<!--<div class="dinv-item">
+						<div class="dinv-image-center"><div class="dinv-item-image" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/2552628/bandage_64.png'); background-size: cover;"></div></div>
+						<div class="qtyinput"><input class="form-control qspinner testspinner" type="number" value="0" min="1" max="10" step="1"/></div>
+					</div>-->
+				</div>
+			</div>
+		</div>
+		<div class="row mt-2">
+			<div class="col-12">
+				<ul class="nav">
+					<li class="nav-item">
+						<a class="nav-link dnav-link nl-active" data-id="1" href="#">General</a>
+					</li>
+					<li class="dnav-item">
+						<a class="nav-link dnav-link" data-id="2" href="#">Food</a>
+					</li>
+					<li class="dnav-item">
+						<a class="nav-link dnav-link" data-id="3" href="#">Narcotics</a>
+					</li>
+					<li class="dnav-item">
+						<a class="nav-link dnav-link" data-id="4" href="#">Weapons</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="resizer-handle ui-resizable-handle ui-resizable-se"></div>
+	</div>
+
+	<div class="fakeTooltip"></div>
+
+	<div id="transferContainer" style="display:none;">
+		<p class="transfer title">Transfer Items</p>
+
+		<table>
+			<tr>
+				<td> <!-- left trans -->
+					<div id="transferBoxLeft" class="transferbox">
+						<!--<span class="transferItemLeft" data-name="Bandage">Bandage</span>
+						<span class="transferItemLeft" data-name="Beretta 9mm">Beretta 9mm</span>
+						<span class="transferItemLeft" data-name="Scorpion SMG">Scorpion SMG</span>-->
+					</div>
+				</td>
+				<td> <!-- buttons -->
+					<br/>
+					<input id="trans_right_qty" class="transqty" type="number" name="trans_right_qty" style="width:60px;" value="1" min="1"><br>
+					<div id="trans_right"></div>
+					<br/>
+					<br/>
+					<input id="trans_left_qty" class="transqty" type="number" name="trans_left_qty" style="width:60px;" value="1" min="1"><br>
+					<div id="trans_left"></div>
+				</td>
+				<td> <!-- right trans -->
+					<div id="transferBoxRight" class="transferbox">
+
+					</div>
+				</td>
+			</tr>
+		</table>
+		<br/>
+		<div class="transferExitButton">Exit Transfer</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="/html/jquery/bootstrap-input-spinner.js" type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.10.0-rc3/Sortable.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-sortablejs@latest/jquery-sortable.js"></script>
+	<script src="https://kit.fontawesome.com/0683b7184f.js" type="text/javascript"></script>
+	<script src="inventory.js" type="text/javascript"></script>
+</body>
+</html>

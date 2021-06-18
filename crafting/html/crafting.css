@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css?family=Teko:300,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed&display=swap');
+body{
+  background-color: transparent;
+	/*font-family: "Arial Black",Gadget,sans-serif;
+	color: darkgray;*/
+}
+/*table.darkTable {
+  font-family: "Arial Black",Gadget,sans-serif;
+  border: 2px solid #000000;
+  background-color: #515151;
+  width: 450px;
+  text-align: center;
+  border-collapse: collapse;
+  position: fixed;
+  top: 25%;
+  left: 38%;
+}
+table.darkTable td, table.darkTable th {
+  border: 1px solid #4A4A4A;
+  padding: 3px 2px;
+}
+table.darkTable tbody td {
+  font-size: 13px;
+  color: #E6E6E6;
+}
+table.darkTable tr:nth-child(even) {
+  background: #2e2e2e;
+}
+table.darkTable thead {
+  background: #0C5CBC;
+  border-bottom: 3px solid #000000;
+}
+table.darkTable thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #E6E6E6;
+  text-align: center;
+  border-left: 2px solid #4A4A4A;
+  text-shadow: 1px 5px 5px #000000;
+}
+table.darkTable thead th:first-child {
+  border-left: none;
+}
+table.darkTable tfoot {
+  font-size: 12px;
+  font-weight: bold;
+  color: #E6E6E6;
+  background: #000000;
+  background: -moz-linear-gradient(top, #404040 0%, #191919 66%, #000000 100%);
+  background: -webkit-linear-gradient(top, #404040 0%, #191919 66%, #000000 100%);
+  background: linear-gradient(to bottom, #404040 0%, #191919 66%, #000000 100%);
+  border-top: 1px solid #4A4A4A;
+}
+table.darkTable tfoot td {
+  font-size: 12px;
+}*/
+.sknum{
+  color: #00C7A3;
+}
+/*#wsContainer{
+  display: none;
+  top:150px;
+  margin-top: 150px;
+  bottom: auto;
+}
+/*.wsMain_table{
+  width: 798px;
+  background-color: #2a2a2a;
+}
+.craftitem{
+	display: flex;
+	border-style: solid;
+	border-color: black;
+	border-width: 3px;
+	align-items: center;
+	font-size: 12px;
+	margin-top: 4px;
+	margin-left: 3px;
+	font-family: arial;
+	font-weight: bolder;
+	color: #00afff;
+	height: 33px;
+	width: 95%;
+	background:#1B1B1B;
+	padding: 2px;
+}
+.craftitem.selected{
+	background: #25C3C5;
+	color: white;
+}
+.craftitem:hover{
+  background: #25C3C5;
+	color: white;
+}
+#cid_details{
+	font-size: 12px;
+	width: 100%;
+	height: 100%;
+	background:#1B1B1B;
+	border: 1px solid #292828;
+	color: darkgrey;
+	text-align: center;
+}
+.citem_playerhas{
+	color:red;
+}
+.citem_required{
+	color: lawngreen;
+}
+.createbutton{
+	padding:6px;
+	background-color:#34B15A;
+	border: 2px solid #078F13;
+	color: white;
+	text-align: center;
+	width: 80%;
+	display: table;
+	margin: 0 auto;
+}
+.createbutton:hover{
+  background-color:rgb(122, 228, 154)!important;
+}
+.exitbutton{
+	background-color:#145B8F;
+	padding: 3px;
+	font-size: 12px;
+	color: white;
+	width: 70%;
+	margin: 5px;
+	text-align: center;
+}
+.exitbutton:hover{
+  background-color:rgb(33, 134, 206);
+}*/
+
+.wsContainer{
+  display: none;
+  position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+  border-radius: 8px;
+  width: 600px;
+  height: 550px;
+  background-color: #3A4149;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.ws-header{
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 18px;
+  border-radius: 8px 8px 0 0;
+  background-color: #2F353A;
+  color: skyblue;
+}
+.ws-craftlist{
+  border: 1px solid #323233;
+}
+.ws-craftdetails{
+  background-color: #2F353A;
+  border: 1px solid #323233;
+}
+.craftitem{
+  color: #a0aebd;
+  border: 1px solid #424d59;
+}
+.craftitem:hover{
+  color: skyblue;
+  cursor: pointer;
+  border: 1px solid #59697a;
+}
+.craftitem.selected{
+  background-color: #2F353A;
+  cursor: pointer;
+  border: 1px solid #2F353A;
+}
+.wsmat-desc{
+  color: #c5d2e0;
+}
+.wsmat-error{
+  color: #e6a5a5;
+}
+.wsmat-success{
+  color: #c6e6a5;
+}
+.ws-buttoncontainer{
+  position: absolute;
+  bottom: 15px;
+  width: 90%;
+  height: 50px;
+}
+.ws-craftbutton{
+  width: 90%;
+}
+.ws-price{
+  color: #c6e6a5;
+}
+
+.skillcontainer{
+  color: darkgray;
+  display: none;
+  border-radius: 8px;
+  background-color: #1f1f1f;
+  position: fixed;
+  left: 2%;
+  bottom: 15%;
+  width: 300px;
+  height: 600px;
+}
+.skills{
+  font-family: 'Teko', sans-serif;
+  font-size: 22px;
+  width: 100%;
+  height: 100%;
+}
+.sk-title{
+  color: white;
+  float: left;
+}
+.sk-value{
+  color: skyblue;
+  float: right;
+}
+.proglabel{
+  font-size: 14px;
+  font-weight:300;
+  color: white;
+}
+.progress{
+  background-color:#353535;
+  height: 20px;
+}
+.ssktext{
+  font-family: 'Teko', sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  position: fixed;
+  left: 45%;
+  bottom: 3%;
+  color: skyblue;
+}
+.craftQtyLabel{
+  color: #a1adb9;
+}
+#inputCraftQty{
+  background-color: #404142;
+  color: white;
+  border: 1px solid #1f2020;
+}
+#inputCraftQty:focus{
+  border: 1px solid #2f2f2f;
+  outline: none;
+}
+.cyclesText{
+  color: #79797a;
+  font-style: italic;
+}

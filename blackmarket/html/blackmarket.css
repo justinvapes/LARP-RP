@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed&display=swap');
+
+body {
+	background-color: transparent;
+	overflow: hidden;
+}
+.mainContainer{
+  display: none;
+  position: absolute;
+  margin: auto;
+  background-color: #3A4149;
+  left: 100px;
+  top: 100px;
+  width: 500px;
+  height: 80%;
+  border-radius: 8px;
+}
+.bm-header{
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 18px;
+  border-radius: 8px 8px 0 0;
+  background-color: #2F353A;
+  color: #d97f64;
+}
+.bm-weaponslist{
+  width: 97%;
+  height: 86%;
+  background-color: #343b42;
+  border-radius: 0px 0px 8px 8px;
+}
+.bm-weaponitems{
+  width: 100%;
+  height: 98%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.bm-weaponitem{
+  color: #D4E7DB;
+  padding: 6px;
+  border-radius: 4px;
+}
+.bm-weaponitem:hover{
+  background-color: #2F353A;
+  cursor: default;
+}
+.bm-weaponitem.selected{
+  background-color: #2F353A;
+}
+.bm-price{
+  color: #71CB71;
+}
+.bm-totalcost{
+  color: #D4E7DB;
+}
+.selicon{
+  display: none;
+}
+.fa-check{
+  margin-right: 4px;
+}

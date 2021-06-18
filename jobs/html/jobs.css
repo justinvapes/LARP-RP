@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap');
+body {
+	font-family: "Segoe UI", "Segoe UI Symbol", "Segoe UI Emoji",  Arial, sans-serif;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+#fishboards{
+  display: none;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+	background-image: url("hex-background.png");
+	background-repeat: repeat-x repeat-y;
+	background-color: #1B1B1B;
+	position: fixed;
+	width: 400px;
+	left: 35%;
+	top: 40%;
+	right: auto;
+	bottom: auto;
+	color: #8E8E8E;
+}
+
+#fbheader{
+	color: skyblue;
+	font-weight: bold;
+}
+
+table.darkTable {
+  font-family: "Arial Black",Gadget,sans-serif;
+  border: 2px solid #000000;
+  background-color: #282828;
+  width: 450px;
+  /*height: 300px;*/
+  text-align: center;
+  border-collapse: collapse;
+  position: fixed;
+  top: 25%;
+  left: 38%;
+}
+table.darkTable td, table.darkTable th {
+  border: 1px solid rgb(55, 55, 55);
+  padding: 3px 2px;
+}
+table.darkTable tbody td {
+  font-size: 13px;
+  color: #E6E6E6;
+}
+table.darkTable tr:nth-child(even) {
+  background: #2e2e2e;
+}
+table.darkTable thead {
+  /*background: #000000;*/
+  background: #0C5CBC;
+  border-bottom: 3px solid #000000;
+}
+table.darkTable thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #E6E6E6;
+  text-align: center;
+  border-left: 2px solid #4A4A4A;
+  text-shadow: 1px 5px 5px #000000;
+}
+table.darkTable thead th:first-child {
+  border-left: none;
+}
+
+table.darkTable tfoot {
+  font-size: 12px;
+  font-weight: bold;
+  color: #E6E6E6;
+  background: #000000;
+  background: -moz-linear-gradient(top, #404040 0%, #191919 66%, #000000 100%);
+  background: -webkit-linear-gradient(top, #404040 0%, #191919 66%, #000000 100%);
+  background: linear-gradient(to bottom, #404040 0%, #191919 66%, #000000 100%);
+  border-top: 1px solid #4A4A4A;
+}
+table.darkTable tfoot td {
+  font-size: 12px;
+}
+#progcontainer{
+  display:none;
+  position: fixed;
+  background-color: #282828;
+  color: skyblue;
+  max-width: 325px;
+  height:75px;
+  left: 42%;
+  bottom: 5%;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+}
+.jobprogress{
+  bottom: 5%;
+  top: auto;
+  max-width: 300px;
+  height: 20px;
+}
+.fishicon{
+  display: none;
+  position: fixed;
+  background-image: url("images/fishicon.png");
+  bottom: 14%;
+  top: auto;
+  left: 60%;
+  right: auto;
+  width: 64px;
+  height: 64px;
+}
+
+.ui-slider .ui-slider-handle{
+  background-image: none !important;
+  width:56px !important;
+  height:14px !important;
+  margin-left:-20px !important;
+  background: rgb(115,115,120) !important;
+  background: linear-gradient(180deg, rgba(115,115,120,1) 0%, rgba(43,43,55,1) 35%, rgba(21,24,24,1) 100%) !important;
+}
+.ui-slider .ui-slider-range-min{
+  background-image:none;
+  background-color: #020202;
+}
+.ui-slider .ui-slider-range-max{
+  background-image:none;
+  background-color: #020202;
+}
+.lawncontainer{
+  display: none;
+  text-align: center;
+  position: absolute;
+  right: 275px;
+  bottom: 2%;
+  width: 160px;
+  height: 36px;
+}
+.lawnimage{
+  float: right;
+  background-image: url("images/grass.png");
+  width: 32px;
+  height: 32px;
+  filter: brightness(70%);
+  filter: drop-shadow(1px 1px 0 black) 
+          drop-shadow(-1px -1px 0 black);
+          
+  top: 0px;
+}
+.lawntext{
+  float: left;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 18px;
+  color: skyblue;
+}
+
+/* seed inv */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #4a596f;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6f829f;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #4a596f;
+}
+::-webkit-scrollbar-track {
+  background: #2d2d2d;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.seedcontainer{
+  display: none;
+  font-family: 'Nunito', sans-serif;
+  border: 1px solid gray;
+  position: fixed;
+  right: 30px;
+  bottom: 70px;
+  width: 500px;
+  height: 300px;
+  border-radius: 11px;
+  background-color: #425169;
+}
+.seeditems{
+  max-height: 210px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.title{
+  color: #edf2f2;
+  padding: 8px;
+  border-radius: 11px 11px 0 0;
+  background-color: #0E1621;
+}
+.weights{
+  color: skyblue;
+  float: right;
+}
+.seedicon{
+  margin: 10px;
+  width: 24px;
+  height: 24px;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2552628/weed_seeds.png);
+}
+.seedtext{
+  float: left;
+  color: #2fceeb;
+  margin: 10px;
+}
+.seedquantity{
+  margin: 10px;
+  margin-right: 15px;
+  float: right;
+}
+.exitbutton{
+  text-align:center;
+  position: fixed;
+  bottom: 71px;
+  width: 497px;
+  color: #edf2f2;
+  padding: 8px;
+  border-radius: 0px 0px 11px 11px;
+  background-color: #0E1621;
+}
+.seeditem:hover{
+  cursor: default;
+  background-color: #2e3e57;
+  border: 1px solid black;
+}
+.exitbutton:hover{
+  cursor: default;
+  color: skyblue;
+  background-color: black;
+}
+.btn-outline-secondary{
+  min-width: 1.8rem !important;
+}
+.qtyinput{
+  display: none;
+}
+.growpreview{
+  opacity: 0.97;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: #0E1621;
+  border-radius: 7px;
+  position: fixed;
+  right: 540px;
+  bottom: 80px;
+  width: 300px;
+  height: 290px;
+}
+.grow-seeditem{
+  margin: 6px;
+  color: white;
+}
+.growprevqty{
+  float: right;
+}
+.growtitle{
+  margin: 6px;
+  margin-right: 14px;
+  float: right;
+  color: lawngreen;
+}
+.warningpanel{
+  padding: 6px;
+  background-color: #0E1621;
+  border: 1px solid #eb4034;
+  position: fixed;
+  right: 540px;
+  bottom: 24px;
+  border-radius: 7px;
+  width: 300px;
+  color: #eb4034;
+  font-size: 14px;
+  text-align: center;
+}
+.warntext{
+  margin: 8px;
+  padding: 6px;
+}
+.plantpanel{
+  padding: 6px;
+  background-color: #0E1621;
+  border: 1px solid #34eb7a;
+  position: fixed;
+  right: 540px;
+  bottom: 24px;
+  border-radius: 7px;
+  width: 300px;
+  font-size: 14px;
+  text-align: center;
+}
+/*.fieldProgressContainers{
+  width: 100%;
+  height: 100%;
+}*/
+.fieldProgress{
+  display: none;
+  width: 170px;
+  height: 34px;
+  position: absolute;
+  background-color: #1f1f1f;
+}
+.weedprogress{
+  font-size: 9px;
+  margin: 2px;
+}
+.hydroprogress{
+  font-size: 9px;
+  margin: 2px;
+  margin-top: 3px;
+}
+.progress{
+  margin: 4px;
+}
+.ui-progressbar-value {
+  transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+}
+.harvestIcon{
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  background: url("images/harvestweed.png");
+}
+.mushroomBoxProgress{
+  display: none;
+  width: 170px;
+  position: absolute;
+  background-color: #1f1f1f;
+}
+.mushroomProgress{
+  font-size: 9px;
+  margin: 2px;
+}
+.mr-humidProgress{
+  font-size: 9px;
+  margin: 2px;
+  margin-top: 3px;
+}
+.mr-tempProgress{
+  font-size: 9px;
+  margin: 2px;
+  margin-top: 3px;
+}
+.dropbutton{
+  display: none;
+  border: 1px solid black;
+  float: right;
+  padding: 3px;
+  height: 22px;
+  width: 20px;
+  color: #f2f2f2;
+  line-height: 1px;
+  font-size: 12px;
+  margin-top: 9px;
+  margin-right: 8px;
+}
+.givebutton{
+  border: 1px solid black;
+  float: right;
+  padding: 3px;
+  height: 22px;
+  width: 20px;
+  color: #f2f2f2;
+  line-height: 1px;
+  font-size: 12px;
+  margin-top: 9px;
+  margin-right: 8px;
+}
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e2042d+0,b5032a+67,6d0019+100 */
+.red-grad{
+  background: #e2042d; /* Old browsers */
+  background: -moz-linear-gradient(top,  #e2042d 0%, #b5032a 67%, #6d0019 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #e2042d 0%,#b5032a 67%,#6d0019 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #e2042d 0%,#b5032a 67%,#6d0019 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2042d', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
+}
+.blue-grad{
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0488e0+1,2d95b5+64,00517c+100 */
+  background: #0488e0; /* Old browsers */
+  background: -moz-linear-gradient(top,  #0488e0 1%, #2d95b5 64%, #00517c 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #0488e0 1%,#2d95b5 64%,#00517c 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #0488e0 1%,#2d95b5 64%,#00517c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0488e0', endColorstr='#00517c',GradientType=0 ); /* IE6-9 */
+}
+.tunerContainer{
+  display: none;
+  background-color: #081920;
+  border: 1px solid #08171b;
+  border-radius: 8px;
+  width: 400px;
+  position: fixed;
+  left: 75px;
+  top: 30%;
+  padding: 20px;
+}
+.tunerLabel{
+  font-size: 12px;
+  color: #c5c5c5;
+}
+.tunerDescriptor{
+  font-size: 14px;
+  color: skyblue;
+}
+.tunerSlider{
+  -webkit-appearance: none;
+  width: 100%;
+  height: 9px;
+  border-radius: 50px;
+  background: #687d88;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  margin-top: 2px;
+  margin-bottom: 3px;
+}
+.tunerSlider:hover {
+  opacity: 1;
+}
+.tunerSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #64d4cf;
+  cursor: pointer;
+  border: 1px solid #08171b;
+  border-radius: 50%;
+}
+.tunerSlider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background: #64d4cf;
+  cursor: pointer;
+  border: 1px solid #08171b;
+  border-radius: 50%;
+}
+.mineProgressContainer{
+  display: none;
+  background-color: #1f1f1f;
+  opacity: 0.7;
+  position: fixed;
+  left: 50px;
+  top: 50px;
+  width: 90px;
+  height: 25px;
+}
+.rockProgress{
+  background: rgb(0, 255, 13);
+  background: linear-gradient(to right, rgb(51, 255, 0) 0%, rgb(255, 0, 0) 100%);
+}
+.vertical {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.vertical {
+  box-shadow: inset 0px 4px 6px #ccc;
+}
+.vtext{
+  transform: rotate(90deg);
+}
+.biohazard{
+  display: none;
+  position: fixed;
+  background-image: url(images/biohazard.png);
+  width: 48px;
+  height: 48px;
+  bottom: 70px;
+  right: 100px;
+}
+.genericInfoPanel{
+  display: none;
+  position: fixed;
+  background-color: #242424;
+  border-radius: 6px;
+  border: 1px solid #313131;
+  opacity: 0.85;
+  right: 50px;
+  bottom: 100px;
+  width: 475px;
+  max-height: 650px;
+}
+.bgtitle{
+  background-color: #2e2e2e;
+}
+.ginfo-title{
+  padding: 5px;
+  color: skyblue;
+  font-style: italic;
+}
+.ginfo-body{
+  color: #c7c7c7;
+  font-size: 14px;
+  max-height: 500px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.huntingSoldItem{
+  border: 1px solid #242424;
+}
+.huntingSoldItem:hover{
+  border: 1px solid #2c2c2c;
+  background-color: #333333;
+}
+.huntingHighlight{
+  color: #82b9cf;
+}
+.newsOverlayPanel{
+  display: none;
+  background-color: #2c2c2c;
+  border: 1px solid #3d3d3d;
+  border-radius: 5px;
+  color: #a5a5a5;
+  position: fixed;
+  bottom: 50px;
+  right: 10%;
+  width: 375px;
+  font-size: 14px;
+}
+.newsCameraHelp{
+  display: none;
+  background-color: #2c2c2c;
+  border: 1px solid #3d3d3d;
+  border-radius: 5px;
+  color: #727272;
+  position: fixed;
+  bottom: 50px;
+  right: 10%;
+  width: 500px;
+  font-size: 14px;
+}
+.progressSmallText{
+  font-family: "Lexend Mega", sans-serif;
+  font-size: 8px;
+  color: #949494;
+}

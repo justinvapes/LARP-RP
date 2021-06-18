@@ -1,0 +1,1218 @@
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/css/alertify.css" integrity="sha512-MpdEaY2YQ3EokN6lCD6bnWMl5Gwk7RjBbpKLovlrH6X+DRokrPRAF3zQJl1hZUiLXfo2e9MrOt+udOnHCAmi5w==" crossorigin="anonymous" />
+  <link href="comms.css" rel="stylesheet" type="text/css" />
+  <script src="comms.js" type="text/javascript"></script>
+  <script src="comms_e911.js" type="text/javascript"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/5b6bfad379.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/alertify.min.js" integrity="sha512-JnjG+Wt53GspUQXQhc+c4j8SBERsgJAoHeehagKHlxQN+MtCCmFDghX9/AcbkkNRZptyZU4zC8utK59M5L45Iw==" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="selfieOverlayPanel"></div>
+  <div class="textnotify"><i class="fad fa-comments-alt"></i></div>
+  <div class="emailNotify"><i class="fas fa-envelope"></i></div>
+  <div id="phoneContainer">
+    <div class="clock">12:00 PM</div>
+    <div class="headerIcons"><div class="notifyIcon_NewEmail"><i class="fas fa-envelope"></i></div></div>
+    <div class="notifyPanel"></div>
+    <div class="phoneDialog">
+      <div class="container-fluid">
+        <div class="row mt-1">
+          <div class="col">
+            <div class="phoneDialog-text"></div>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col">
+            <button class="btn btn-sm btn-danger phoneDialogBtnNo float-right" style="width: 80px; font-size: 11px">No</button>
+          </div>
+          <div class="col">
+            <button class="btn btn-sm btn-success phoneDialogBtnYes float-right" style="width: 80px; font-size: 11px">Yes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="homebutton"></div>
+    <div class="homescreen">
+      <div class="hsicon_contacts"></div>
+      <div class="hsicon_weather"></div>
+      <div class="hsicon_e911"></div>
+      <div class="hsicon_paypal"></div>
+      <div class="hsicon_notepad"></div>
+      <div class="hsicon_settings"></div>
+      <div class="hsicon_calculator"></div>
+      <div class="hsicon_tweeter"></div>
+      <div class="hsicon_gps"></div>
+      <div class="hsicon_mechanic"></div>
+      <div class="hsicon_callhistory"></div>
+      <div class="hsicon_transactionhistory"></div>
+      <div class="hsicon_selfie"></div>
+      <div class="hsicon_emails"></div>
+      <div class="hsicon_yellowpages"></div>
+    </div>
+    <div class="callstatus_ret"></div>
+    <div class="contactlist container-fluid"></div>
+    <div class="controlbar">
+      <div class="editicon">
+        <i class="fas fa-user-edit mr-1"></i>
+      </div>
+      <div class="addicon">
+        <i class="fas fa-user-plus mr-1"></i>
+      </div>
+      <div class="remicon">
+        <i class="fas fa-user-times mr-1"></i>
+      </div>
+    </div>
+    <div class="addcontact container">
+      <!--<br/>
+      <input type="text" id="addcon_name" class="addcon-input-text" size="30" placeholder="Enter name.." maxlength="20">
+      <span class="generic_text noselect">Contact Name</span>
+      <input type="text" id="addcon_number" class="addnum-input-text" size="30" placeholder="Enter phone number..">
+      <span class="generic_text noselect">Contact Mobile Number</span>
+      <input type="text" id="addcon_email" class="addnum-input-email" size="30" placeholder="Enter email address..">
+      <span class="generic_text noselect">Contact Email</span>
+      <br/>
+      <div class="cancel_button"></div>
+      <div class="doadd_button"></div>-->
+      <div class="row">
+        <div class="col">
+          <label for="addcon_name">Contact Name</label>
+          <input type="text" id="addcon_name" class="addcon-input-text" size="30" placeholder="Enter name.." maxlength="20">
+          <label for="addcon_number">Contact Number</label>
+          <input type="text" id="addcon_number" class="addcon-input-number" size="30" placeholder="Enter number.." maxlength="30">
+          <label for="addcon_email">Contact Email</label>
+          <input type="text" id="addcon_email" class="addcon-input-email" size="30" placeholder="Enter email.." maxlength="200">
+        </div>
+      </div>
+      <div class="row mt-2 mb-2">
+        <div class="col">
+          <span class="cancel_button"><i class="fas fa-window-close"></i></span>
+          <span class="doadd_button"><i class="fas fa-plus-square"></i></span>
+        </div>
+      </div>
+    </div>
+    <div class="callstatus">
+      <span id="callstatus_text" class="generictext" style="position:relative;top:60px;">Incoming Call from <br/>555-5555</span>
+      <div class="callstatusicon"></div>
+      <div id="cancelcall" class="cancel" style="position: relative; top:160px; left: 144px;"></div>
+      <div id="answercall" class="answer" style="position: relative; top:96px; left: 75px;"></div>
+      <!--<div id="groupAnswerCall" class="groupJoinAcceptCall" style="position: absolute; top: 345px; left: 110px;"></div>-->
+    </div>
+    <div class="textcenter">
+      <div class="text_backbutton"></div>
+      <!--<span class="texticon"></span>-->
+      <span id="textname_generic" class="generictext"><span id="textnumber_generic" style="color: blue;"></span></span>
+      <div id="textmessages" class="textmessages">
+        <!--<div class="textmessage_in"><span style="font-size: 9px; color:blue; float: left;"><<</span><br/>Vivamus fermentum semper porta.</div>
+        <div class="textmessage_out"><span style="font-size: 9px; color:blue; float: right;">>></span><br/>Vivamus fermentum semper porta.</div>-->
+      </div>
+      <div class="textmessage_inputcontainer">
+        <textarea id="textmessage_input" class="textmessage_input" maxlength="500" placeholder="Type message and press enter.."></textarea>
+      </div>
+    </div>
+    <div class="weathercenter">
+      <div id="weathericon" class="weathericon clear"></div>
+      <div class="weathertext">Weather Outlook
+        <span style="font-size: 18px;"><br/>
+          <b>Currently:</b>
+          <div id="weather_text">Sunny</div><br/><br/>
+          <b>Forecast:</b>
+          <div id="next_weather_text">Sunny</div>
+        </span>
+      </div>
+      <div id="nextweathericon" class="nextweathericon clear"></div>
+    </div>
+    <div class="paypal">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg">
+            <div class="paypal-header"></div>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+          <div class="col-lg" style="text-align: center; background-color: #2d65b2; color: skyblue; padding: 9px;">
+            <span>Your current balance:</span>
+            <br/>
+            <span class="pp-moneydisp">$0</span>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <div class="col-lg" style="text-align: center; background-color: #2d65b2; color: skyblue; padding: 9px;">
+            <span style="font-size: 12px;"></span>
+            <br/>
+            <br/>
+            <span style="font-weight: bold; color: white;">Recipient Name</span>
+            <input type="text" class="pp-recipient" placeholder="Enter name..">
+            <br/>
+            <span style="font-weight: bold; color: white;">Dollar Amount</span>
+            <input type="text" class="pp-amount" placeholder="Enter amount.. e.g. 10.00">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg" style="text-align: center; background-color: #2d65b2; color: skyblue; padding-top: 20px; padding-bottom: 21px;">
+            <button class="pp-btranshistory" style="margin-right: 10px;">History</button>
+            <button class="pp-sendfunds" style="margin-left: 10px;">Send Money</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="paypal-transhistory">
+      <div class="container-fluid" style="height: 290px;">
+        <div class="row">
+          <div class="col-lg">
+            <div class="paypal-header"></div>
+          </div>
+        </div>
+        <div class="row h-100" style="margin-top: 50px;">
+          <div class="col-lg" style="text-align: center; background-color: #2d65b2; color: skyblue; padding: 9px;">
+            <span>Your transaction history:</span>
+            <br/>
+            <div class="pp-translist" style="height: 255px; padding-top:10px;">
+              <!--<div class="row pptrans">
+                <div class="col-md pptrans name">Jenn Anarchy</div>
+                <div class="col-sm pptrans amount">$1000</div>
+              </div>
+              <div class="row pptrans">
+                <div class="col-md pptrans name">Damien Archer</div>
+                <div class="col-sm pptrans amount">$150</div>
+              </div>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="e911">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm">
+            <div class="lapdlogo"></div>
+          </div>
+          <div class="col-sm"><span class="e911text"><br/>911 Emergency Services</div></div>
+        </div>
+        <div class="row gutter">
+          <div class="col-lg e911text white small">
+            Warning:  Fraudulent use of this system is punishable by up to $50,000 in fines and 20 months in prison.
+          </div>
+        </div>
+        <div class="row gutter">
+          <div class="col-lg">
+            <span class="e911text">What is your emergency?</span>
+          </div>
+        </div>
+        <div class="row gutter">
+          <div class="col-lg">
+            <span id="reqnotify" class="e911text offred" style="display: none;">Emergency Services have been contacted and will respond if/when they become available.</span>
+            <span id="cancelnotify" class="e911text offred" style="display: none;">Your call has been cancelled.</span>
+            <textarea id="e911emergency_input" class="e911-input-text" maxlength="900" style="resize: none;" placeholder="Describe the emergency to the best of your ability.. (This field is NOT optional)"></textarea>
+          </div>
+        </div>
+        <div class="row gutter">
+          <div class="col-lg e911text white small">
+            By clicking "Request Services", you certify that the information above is correct.
+            Emergency services personnel will receive your name and location information.
+          </div>
+        </div>
+        <div class="row gutter">
+          <div class="col-lg">
+            <div class="e911reqservices float-right">Request Services</div>
+            <div class="e911cancelservices float-left">Cancel Services</div>
+          </div>
+        </div>
+      </div>
+      <div class="notepad">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg" style="text-align: center; background-color: #e5f0c1; color: black; padding: 9px;">
+              <textarea style="width:97%;height:97%;" class="notepad-input-area" placeholder="Type a note.."></textarea>
+            </div>
+          </div>          
+        </div>
+      </div>
+      <div class="settings">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg" style="text-align: center; background-color: #363636; color: white; padding: 9px;">
+              <div class="label">
+                <label>Theme:</label>
+              </div>
+              <div class="theme-selection">
+                <select class="theme">
+                 <option value="theme1" data-filename="homescreen1.jpg">Standard</option>
+                 <option value="theme6" data-filename="racing.jpg">Racing</option>
+                 <option value="theme7" data-filename="rocketship.jpg">Shoot for the Stars</option>
+                 <option value="theme8" data-filename="flower.jpg">Flower</option>
+                 <option value="theme9" data-filename="anarchy.jpg">Anarchy</option>
+                 <option value="theme10" data-filename="anime1.jpg">Anime 1</option>
+                 <option value="theme11" data-filename="anime2.jpg">Anime 2</option>
+                 <option value="theme12" data-filename="anime3.jpg">Anime 3</option>
+                 <option value="theme13" data-filename="ems1.jpg">EMS 1</option>
+                 <option value="theme14" data-filename="ems2.jpg">EMS 2</option>
+                 <option value="theme5" data-filename="ems3.jpg">EMS 3</option>
+                 <option value="theme15" data-filename="galaxy1.jpg">Space 1</option>
+                 <option value="theme16" data-filename="galaxy2.jpg">Space 2</option>
+                 <option value="theme17" data-filename="galaxy3.jpg">Space 3</option>
+                 <option value="theme3" data-filename="galaxy4.jpg">Space 4</option>
+                 <option value="theme18" data-filename="heart.jpg">Heart</option>
+                 <option value="theme19" data-filename="hellokitty.jpg">Hello Kitty</option>
+                 <option value="theme20" data-filename="lips.jpg">Lips</option>
+                 <option value="theme21" data-filename="nike.jpg">Nike</option>
+                 <option value="theme22" data-filename="police1.jpg">Police 1</option>
+                 <option value="theme23" data-filename="police2.jpg">Police 2</option>
+                 <option value="theme24" data-filename="police3.jpg">Police 3</option>
+                 <option value="theme25" data-filename="sparkles.jpg">Sparkles</option>
+                 <option value="theme26" data-filename="street1.jpg">Street 1</option>
+                 <option value="theme27" data-filename="street2.jpg">Street 2</option>
+                 <option value="theme28" data-filename="street3.jpg">Street 3</option>
+                 <option value="theme29" data-filename="street4.jpg">Street 4</option>
+                 <option value="theme30" data-filename="street5.jpg">Street 5</option>
+                 <option value="theme31" data-filename="street6.jpg">SkReEt bRuH</option>
+                 <option value="theme32" data-filename="supreme1.jpg">Supreme 1</option>
+                 <option value="theme33" data-filename="supreme2.jpg">Supreme 2</option>
+                 <option value="theme34" data-filename="technical.jpg">Techie 1</option>
+                 <option value="theme35" data-filename="technical2.jpg">Techie 2</option>
+                 <option value="theme36" data-filename="technical3.jpg">Techie 3</option>
+                 <option value="theme37" data-filename="technical4.jpg">Techie 4</option>
+                 <option value="theme2" data-filename="technical5.jpg">Techie 5</option>
+                 <option value="theme38" data-filename="tokidoki.jpg">Toki Dokie</option>
+                </select> 
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-7" style="text-align: left; color: white;margin-top:30px;font-size:12px;">
+              <p>Cellular</p>
+            </div>            
+            <div class="col-lg-5" style="text-align: right; color: white;margin-top:27px;font-size:12px;">
+              <label class="switch">
+                <input type="checkbox" checked disabled>
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>              
+          <div class="row">
+            <div class="col-lg-7" style="text-align: left; color: white;margin-top:10px;font-size:12px;">
+              <p>Phone Number</p>
+              <p>Software Version:</p>
+              <p>Model Name:</p>
+              <p>Model Number:</p>
+              <p>Serial Number:</p>
+            </div>            
+            <div class="col-lg-5" style="text-align: right; color: white;margin-top:10px;font-size:12px;">
+              <p class="phnum-display">000-000-0000</p>
+              <p>0.4.1</p>
+              <p>Cyborg X9+</p>
+              <p>CYX9PBLK</p>
+              <p>F2LQXEQ8GR</p>
+            </div>
+          </div>
+          <div class="row">
+            <hr>
+            <div class="col-lg-5" style="text-align: left; color: white;margin-top:15px;font-size:12px;">
+              <p>Network:</p>
+              <p>Applications:</p>
+              <p>Capacity:</p>
+              <p>Available:</p>
+            </div>
+            <div class="col-lg-7" style="text-align: right; color: white;margin-top:15px;font-size:12px;">
+              <p>LA Cellular</p>
+              <p>13</p>
+              <p>64 GB</p>
+              <p>52.38 GB</p>
+            </div>
+          </div>
+          <div class="row">
+            <hr>
+            <div class="col-lg-5" style="text-align: left; color: white;margin-top:15px;font-size:12px;">
+              <p>Twitter Barks</p>
+            </div>
+            <div class="col-lg-7" style="text-align: right; color: white;margin-top:15px;font-size:12px;">
+              <p><input type="checkbox" class="settings-twitter-showbarks"></p>
+            </div>
+            <div class="col-lg-7" style="text-align: left; color: white;margin-top:-1px;font-size:12px;">
+              <p>Bark Screen Position</p>
+            </div>
+            <div class="col-lg-5" style="text-align: right; color: white;margin-top:-1px;font-size:12px;">
+              <div class="twitter-barkposition">
+                <select class="barkposition-select">
+                  <option value="bottomRight" selected>Bottom Right</option>
+                  <option value="topRight">Top Right</option>
+                  <option value="bottomLeft">Bottom Left</option>
+                  <option value="topLeft">Top Left</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-5" style="text-align: left; color: white;margin-top:2px;font-size:12px;">
+              <p>Silent Mode</p>
+            </div>
+            <div class="col-lg-7" style="text-align: right; color: white;margin-top:2px;font-size:12px;">
+              <p><input type="checkbox" class="settings-silentmode"></p>
+            </div>
+            <div class="col-lg-7" style="text-align: left; color: white;margin-top:1px;font-size:12px;">
+              <p>Hide Notifications</p>
+            </div>
+            <div class="col-lg-5" style="text-align: right; color: white;margin-top:1px;font-size:12px;">
+              <p><input type="checkbox" class="settings-hidenotifications"></p>
+            </div>
+          </div>
+          <!-- <div class="row">
+            <hr>
+            <div class="col-lg-5" style="text-align: left; color: white;margin-top:-6px;font-size:12px;">
+              <p>Silence Phone</p>
+            </div>
+            <div class="col-lg-7" style="text-align: right; color: white;margin-top:-6px;font-size:12px;">
+              <p><input type="checkbox" class="settings-silence-phone"></p>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <div class="calculator">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg" style="text-align: center; color: black;">
+              <div id="calculator">
+                <div id="result"></div>
+                <span class="key clear-key">C</span>
+                <span class="key equal-key">=</span>
+                <span class="key">7</span>
+                <span class="key">8</span>
+                <span class="key">9</span>
+                <span class="key">/</span>
+                <span class="key">4</span>
+                <span class="key">5</span>
+                <span class="key">6</span>
+                <span class="key">*</span>
+                <span class="key">1</span>
+                <span class="key">2</span>
+                <span class="key">3</span>
+                <span class="key">-</span>
+                <span class="key">0</span>
+                <span class="key">00</span>
+                <span class="key">.</span>
+                <!--<span class="blank"></span>-->
+                <span class="key">+</span>
+            </div>
+            </div>
+          </div>          
+        </div>
+      </div>
+      <div class="twitter">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12 mt-1 mb-1">
+              <img src="twitter-logo.png" width="40">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="twitter-feed">
+                
+                <!-- Twitter message template
+                <div class="row tweet">
+                  <div class="col-9">
+                    <div class="twitter-name">Matt Webb</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="twitter-message">Knock off your bull shit.</div>
+                    <div class="twitter-divider"></div>
+                  </div>
+                </div>
+                -->
+                
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-12">
+              <div class="twitter-input">
+                <div class="form-group">
+                  <textarea maxlength="255" class="twitter-input-text" placeholder="Enter tweet >"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gps">
+        <div class="row">
+          <div class="col-12">
+            <div class="gps-map">
+              <div class="gps-pin"></div>
+              <div class="gps-lojack-toggle">
+                <i class="material-icons md-18">toll</i>
+              </div>
+              <div class="gps-lojack-untrack">
+                <i class="material-icons md-18">not_interested</i>
+              </div>
+              <div class="gps-lojack-container container">
+                <div class="row">
+                  <div class="col-12">
+                    <label for="lojack-plate">Enter vehicle plate</label>
+                    <input class="gps-input" type="text" maxlength="10" id="lojack-plate">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <button class="lojack-selplate-btn btn btn-info btn-sm">Find ></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mechanic">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <div class="mechanic-header"></div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-12">
+              <span style="color: skyblue;">This app will contact a Tow Truck / Mechanic to help you with any towing or vehicle repairs you may need.  Only use this app if you are in need of assistance, do not waste their time.<br/><br/>
+              Using this app will cost a small fee of $500.  This does not include fees that you will need to pay to the mechanic service personnel.</span>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-12">
+              <div class="button-cont">
+                <button class="btnContactMechanic btn btn-info">Request Assistance</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="vehiclesellinfo">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <img src="carmax.png">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12" style="color: white">
+              Vehicle Model: <span class="cm-model" style="color: aqua">Mesa</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12" style="color: white">
+              List Price: <span class="cm-price" style="color: lawngreen">$50000</span>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-12" style="color: white">
+              Installed Mods:
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-12 vehinfomods" style="color: yellow">
+              
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-12">
+              <button class="btn btn-info float-right cm-purchasevehicle">Purchase Vehicle</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dealerSellLogs">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <div class="ds-header">Dealership Logs</div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-12">
+              <div class="dsLogEntries">
+                
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <button class="btn btn-info ds-clearlogs" style="height: 30px; line-height: 2px">Clear Logs</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phoneHistoryLogs">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <div class="callLog-header">Call History</div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-12">
+              <div class="phoneCallLog-Entries">
+                <div class="row">
+                  <div class="phoneCallLog-Entry">
+                    <div class="col-12">
+                      <div class="row">
+                        <div class="col-12">
+                          No recent calls.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bankAccountTransactionLogs">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col">
+              <div class="callLog-header">Bank Account Transactions</div>
+            </div>
+          </div>
+          <div class="row mt-1">
+            <div class="col">
+              <div class="dropdown">
+                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropDownAccountHistory" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Select Account
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropDownAccountHistory" id="dropDownAccountHistoryList"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col bankAccountBalance">
+
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col">
+              <table class="table table-dark transactionHistoryTable">
+                <thead style="display: block">
+                  <tr>
+                    <th scope="col">Name/Amount</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Date/Time</th>
+                  </tr>
+                </thead>
+                <tbody class="transactionHistoryDataAnchor">
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="selfiePanel">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col">
+              <div class="ucamLogo"></div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col">
+              <div class="selfieSettings-panel">
+                <div class="card">
+                  <div class="card-header">
+                    Camera Filters
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col" style="font-size: 13px">
+                        Active Filter: <span class="ucam-activeFilter">Default</span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col" style="font-size: 13px">
+                        Filter Strength: <span class="ucam-activeFilterStrength">1.0</span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col" style="font-size: 13px">
+                        Cycle Filter
+                      </div>
+                    </div>
+                    <div class="row mt-1">
+                      <div class="col-6">
+                        <button class="btn btn-info btnUcamPrevFilter" style="font-size: 12px; width: 100%"><i class="fas fa-arrow-square-left"></i></button>
+                      </div>
+                      <div class="col-6">
+                        <button class="btn btn-info btnUcamNextFilter" style="font-size: 12px; width: 100%"><i class="fas fa-arrow-square-right"></i></button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col" style="font-size: 13px">
+                        Cycle Strength
+                      </div>
+                    </div>
+                    <div class="row mt-1">
+                      <div class="col">
+                        <button class="btn btn-info btnUcamDecStrength" style="font-size: 12px; width: 100%"><i class="fas fa-arrow-square-left"></i></button>
+                      </div>
+                      <div class="col">
+                        <button class="btn btn-info btnUcamIncStrength" style="font-size: 12px; width: 100%"><i class="fas fa-arrow-square-right"></i></button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col" style="font-size: 13px">
+                        Camera Zoom
+                      </div>
+                    </div>
+                    <div class="row mt-1">
+                      <div class="col">
+                        <button class="btn btn-info btnUcamDecZoom" style="font-size: 12px; width: 100%"><i class="fas fa-arrow-square-left"></i></button>
+                      </div>
+                      <div class="col">
+                        <button class="btn btn-info btnUcamIncZoom" style="font-size: 12px; width: 100%"><i class="fas fa-arrow-square-right"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mt-1">
+                  <div class="card-header">
+                    Camera Overlays
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col">
+                        <div class="dropdown">
+                          <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropDownSelectOverlaySelfie" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Select Overlay
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropDownSelectOverlaySelfie" id="dropDownSelectOverlaySelfieList">
+                            <button class="dropdown-item btnSelfieOverlay" type="button" data-image="0">No Overlay</button>
+                            <button class="dropdown-item btnSelfieOverlay" type="button" data-image="chains.png" data-size="cover">Chains</button>
+                            <button class="dropdown-item btnSelfieOverlay" type="button" data-image="grunge.png" data-size="cover" data-position="center">Grunge Borders</button>
+                            <button class="dropdown-item btnSelfieOverlay" type="button" data-image="heartroses.png" data-size="contain" data-position="center">Heart of Roses</button>
+                            <button class="dropdown-item btnSelfieOverlay" type="button" data-image="twigs.png" data-size="contain" data-position="center">Thorn Circle</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mt-1">
+                  <div class="card-header">
+                    Posting Options
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col">
+                        <small style="font-size: 10px; color: #5f5f5f">This will post to the city selfie board.  Overlays will not show up on board posted selfies.</small>
+                      </div>
+                    </div>
+                    <div class="row mt-2">
+                      <div class="col">
+                        <button class="btn btn-info btnSnapSelfie" data-snaptype="1" style="font-size: 12px"><i class="fad fa-camera-retro mr-2"></i>Snap!</button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <input type="text" id="inputSnapSelfieTitle" maxlength="120" placeholder="Image Title (optional, 120 chars max)">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row hidePhoneUcamFloat">
+            <div class="col">
+              <button class="btn btn-success btnUcamHidePhone" style="font-size: 10px">Hide Phone</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="padDialer">
+        <div class="container-fluid padDialerContents">
+          <div class="dialerOutput"><span class="dialerOutputText"></span><i class="fa fa-long-arrow-left float-right dialerOutputBack" aria-hidden="true"></i></div>
+          <div class="row dialerRow">
+            <div class="dialerDigit" data-val="1">1</div>
+            <div class="dialerDigit" data-val="2">2
+              <div class="digitSub">ABC</div>
+            </div>
+            <div class="dialerDigit" data-val="3">3
+              <div class="digitSub">DEF</div>
+            </div>
+          </div>
+          <div class="row dialerRow">
+            <div class="dialerDigit" data-val="4">4
+              <div class="digitSub">GHI</div>
+            </div>
+            <div class="dialerDigit" data-val="5">5
+              <div class="digitSub">JKL</div>
+            </div>
+            <div class="dialerDigit" data-val="6">6
+              <div class="digitSub">MNO</div>
+            </div>
+          </div>
+          <div class="row dialerRow">
+            <div class="dialerDigit" data-val="7">7
+              <div class="digitSub">PQRS</div>
+            </div>
+            <div class="dialerDigit" data-val="8">8
+              <div class="digitSub">TUV</div>
+            </div>
+            <div class="dialerDigit" data-val="9">9
+              <div class="digitSub">WXYZ</div>
+            </div>
+          </div>
+          <div class="row dialerRow">
+            <div class="dialerDigit">*</div>
+            <div class="dialerDigit" data-val="0">0</div>
+            <div class="dialerDigit">#</div>
+          </div>
+          <div class="dialerActionRow">
+            <div class="dialerCall">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+            </div>
+            <div class="dialerHistory">
+              <i class="fad fa-history" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="emailMaster">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col mt-1 emailMasterHeader">
+              <span class="emailViewOrCompose">Email Inbox</span>
+              <i class="fas fa-pen-square float-right mt-1 btnComposeEmail" style="color: #6eaa8a;"></i>
+            </div>
+          </div>
+          <div class="row mt-1 p-2">
+            <div class="col emailsList" style="height: 400px">
+              <!-- Emails -->
+            </div>
+            <div class="col emailsCompose" style="height: 400px">
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="emailSendTo">Email Address</label>
+                    <input type="text" class="form-control" id="emailSendTo" aria-describedby="emailSendTo" placeholder="Enter an email address.." maxlength="250">
+                  </div>
+                  <div class="form-group">
+                    <label for="emailSubject">Subject (200 char max)</label>
+                    <input type="text" class="form-control" id="emailSubject" aria-describedby="emailSubject" placeholder="Enter text.." maxlength="200">
+                  </div>
+                  <div class="form-group">
+                    <label for="emailBody">Email Text (1024 char max)</label>
+                    <textarea class="form-control" id="emailBody" aria-describedby="emailBody" placeholder="Enter email text.." maxlength="1024"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <small class="ml-3"><span class="smlEmailBodyCount">1024</span> chars remaining</small>
+                    <button class="btn btn-info btn-sm float-right btnSendEmail">Send Email</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col emailView" style="height: 400px">
+            
+              <div class="row">
+                <div class="col-3">
+                  <small>From:</small>
+                </div>
+                <div class="col-9 emailViewFrom">
+                  
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-3">
+                  <small>Date/Time:</small>
+                </div>
+                <div class="col-9 emailViewTimestamp">
+                  
+                </div>
+              </div>
+              <div class="row mt-4">
+                <div class="col emailViewBody">
+                  
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <button class="btn btn-secondary btn-sm btnEmailViewBack">Back</button>
+                  <button class="btn btn-dark btn-sm float-right btnEmailViewDelete">Delete</button>
+                  <button class="btn btn-info btn-sm float-right btnEmailViewReply mr-1">Reply <i class="fas fa-reply"></i></button>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="yellowPagesMaster">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col">
+              <div class="ypHeader"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="row mt-1">
+                <div class="col">
+                  <div class="dropdown">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="ypViewCatSelector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      General
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="ypViewCatSelector">
+                      <button class="dropdown-item yp-viewCatDropDown-item" type="button" data-catid="1">Automotive</button>
+                      <button class="dropdown-item yp-viewCatDropDown-item" type="button" data-catid="2">Business</button>
+                      <button class="dropdown-item yp-viewCatDropDown-item" type="button" data-catid="3">General</button>
+                      <button class="dropdown-item yp-viewCatDropDown-item" type="button" data-catid="4">Personal</button>
+                      <button class="dropdown-item yp-viewCatDropDown-item" type="button" data-catid="5">Government</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col">
+                  <small>Latest Listings</small>
+                </div>
+              </div>
+              <div class="ypListingsContainer row mt-1">
+                <div class="col ypListings-anchor">
+                  <!-- Listings -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="float-right mr-2 mt-1 ypAddListing">
+                <i class="fas fa-layer-plus"></i>
+              </div>
+            </div>
+          </div>
+          
+          <div class="ypNewListing container-fluid">
+            <div class="row mt-1">
+              <div class="col-8">
+                <div class="dropdown">
+                  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="ypCatSelector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Select a Category
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="ypCatSelector">
+                    <button class="dropdown-item yp-dropDown-item" type="button" data-catid="1">Automotive</button> <!-- TODO Dynamically populate? -->
+                    <button class="dropdown-item yp-dropDown-item" type="button" data-catid="2">Business</button>
+                    <button class="dropdown-item yp-dropDown-item" type="button" data-catid="3">General</button>
+                    <button class="dropdown-item yp-dropDown-item" type="button" data-catid="4">Personal</button>
+                    <button class="dropdown-item yp-dropDown-item" type="button" data-catid="5">Government</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 ypAdCost">
+                Cost for ad: $7500
+              </div>
+            </div>
+            <div class="row mt-1">
+              <div class="col">
+                <label for="ypNewListing-Text" id="labelYpTextLength">Enter your Ad Text (600 chars remaining)</label>
+                <textarea id="ypNewListing-Text" style="height: 125px" maxlength="600" placeholder="You can use chat color codes (Emoji are unsupported).&#10;&#10;Line breaks are worth 50 characters.  Do not use fillers to make your advert more obnoxious."></textarea>
+              </div>
+            </div>
+            <div class="row mt-1">
+              <div class="col">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="ypNewListing-showNumber" checked="true">
+                  <label class="custom-control-label" for="ypNewListing-showNumber" style="width: 78px">Show Number</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="ypNewListing-showEmail" checked="true">
+                  <label class="custom-control-label" for="ypNewListing-showEmail">Show Email</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <small>Ad preview</small>
+              </div>
+            </div>
+            <div class="row mt-1">
+              <div class="col">
+                
+                <div class="ypListing preview">
+                  <div class="row">
+                    <div class="col ypListing-name">
+                      Name
+                    </div>
+                    <div class="col ypListing-number">
+                      Number
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col ypListing-email">
+                      Email
+                    </div>
+                  </div>
+                  <div class="row mt-1">
+                    <div class="col ypListing-text">
+                      
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col">
+                <button class="btn btn-sm btn-dark float-right ypPostAdvert">Post <i class="fad fa-arrow-alt-up ml-1"></i></button>
+                <button class="btn btn-sm btn-dark float-right ypCancelAdvert mr-2">Cancel</button>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="ypViewListing container-fluid">
+            <div class="row">
+              <div class="col">
+                <small>View Listing</small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col ypViewListing-name">
+                Some name here
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col ypViewListingContainer"></div>
+            </div>
+            <div class="row mt-2">
+              <div class="col">
+                <button class="btn btn-sm btn-dark float-right ypViewListingBack"><i class="fad fa-arrow-to-left mr-2"></i>Back</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ypBlocker">
+        <i class="fad fa-spin fa-spinner" style="left: 40%; top: 40%;"></i>
+      </div>
+
+      <div class="racingApp">
+        <div class="container">
+          <div class="row pt-2 pb-1 racingTrackHeader">
+            <div class="col-5" style="line-height: 30px">
+              Track Select
+            </div>
+            <div class="col-7">
+              <div class="dropdown float-right">
+                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="racingTrackSelector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Standard
+                </button>
+                <div class="dropdown-menu" aria-labelledby="racingTrackSelector">
+                  <button class="dropdown-item" type="button" data-trackid="1">Standard</button>
+                  <button class="dropdown-item" type="button" data-trackid="2">Racing</button>
+                  <button class="dropdown-item" type="button" data-trackid="3">Track 1</button>
+                  <button class="dropdown-item" type="button" data-trackid="4">Track 2</button>
+                  <button class="dropdown-item" type="button" data-trackid="5">Track 3</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Section panels -->
+          <div class="row mt-2 racingApp-RacerList-Section">
+            <div class="col">
+              <div class="row">
+                <div class="col">
+                  Buy In:
+                </div>
+              </div>
+              <div class="row mt-1">
+                <div class="col" style="text-align:center">
+                  <input type="number" id="racingApp-inputBuyIn" style="width: 200px; height: 25px" placeholder="Enter amount e.g. 10.00">
+                </div>
+              </div>
+              
+              <div class="row mt-1">
+                <div class="col">
+                  Invite Racer:
+                </div>
+              </div>
+              <div class="row mt-1">
+                <div class="col" style="text-align:center">
+                  <input type="text" id="racingApp-inputInviteRacer" style="width: 200px; height: 25px" placeholder="Enter name..">
+                </div>
+              </div>
+              
+              <div class="row mt-1">
+                <div class="col">
+                  Current Racers:
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col">
+                  <!-- Racers list -->
+                  <div class="racingApp-racers-anchor">
+                    
+                    <!-- Template for racer entry -->
+                    <div class="row racingApp-racer">
+                      <div class="col-6 racerName">
+                        Steve Spicoli
+                      </div>
+                      <div class="col-6 racerStatus">
+                        Ready
+                      </div>
+                    </div>
+                    
+                  </div>                
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-6">
+                  <button class="btn btn-danger btnDoRaceCancel">Cancel</button>
+                </div>
+                <div class="col-6">
+                  <button class="btn btn-success float-right btnDoRaceAccept">Start Race</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row mt-2 racingApp-TrackMarkers-Section">
+            <div class="row">
+              <div class="col">
+                <div class="racingApp-markerMapContainer">
+                  <div class="racingApp-markerMap">
+                    <div class="racingApp-pinsOverlay">
+                      <!-- pins go inside of this div -->
+                      <!-- test pin with direct style positioning.  -->
+                      <div class="markerMap-pin" style="left: 62px; top: 295px;"></div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="selfiePhoneReturnPanel mb-2"></div>
+
+  <!-- LEO E911 handler -->
+  <div class="e911display-toggle"></div>
+  <div class="e911display scrollthin">
+    <div class="container-fluid ninerdisplay">
+      <div class="row">
+        <div class="col-lg ninerheader">
+          Pending 911 Dispatch Traffic
+        </div>
+        <div class="col-1" style="background-color: black;">
+          <span class="newcallspill badge badge-pill badge-danger"></span>
+        </div>
+        <div class="col-1" style="background-color: black;">
+          <div class="e911-expandbarbutton"></div>
+        </div>
+        <div class="col-1" style="background-color: black;">
+          <div class="e911-transbutton down"></div>
+        </div>
+        <div class="col-1" style="background-color: black;">
+          <div class="e911-transbutton up"></div>
+        </div>
+      </div>
+      <div class="row ninercallrow">
+        <div class="col-lg">
+          <div class="container-fluid ninercalls">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cameraSystemContainer p-3">
+    <div class="row">
+      <div class="col-12">
+        <div class="camsysHeader">VeriGuard Security Systems</div>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-12">
+        <div class="camsysCameras">
+          
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-12 cshelptext">
+        Press [E] to exit the system.<br/>
+        Menu Navigation:<br/>
+        <div style="padding-left: 12px mt-2">
+          NumPad 8: Up<br/>
+          NumPad 5: Down<br/>
+          <br/>
+          Arrows control camera direction
+        </div>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-12">
+        <div class="camsysFooter">Software Ver. 2.73</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="browsePhoneInfo p-2">
+    <div class="row">
+      <div class="col">
+        Your Current Phone: <span class="lastPhone"></span>
+      </div>
+    </div>
+    <div class="row mt-1">
+      <div class="col">
+        Viewing Phone: <span class="currentPhone"></span>
+      </div>
+    </div>
+    <div class="row mt-1">
+      <div class="col">
+        Navigation:
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        A/D: Go to Prev/Next phone<br/>
+        E: Purchase current phone<br/>
+        <br/>
+        Backspace: Exit Store
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(".e911display").draggable({
+      handle: ".ninerheader"
+    });
+    $(".e911display").resizable({
+      animate: true,
+      handles: "se"
+    });
+  </script>
+</body>
+</html>

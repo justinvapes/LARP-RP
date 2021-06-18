@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Charm');
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+
+.watermark {
+  font: bold 16px/30px 'Charm',serif;
+  text-align: center;
+  color: #4470AD;
+  text-shadow: 1px 1px 1px #000000;
+  position: relative;
+  bottom: 10px;
+}
+
+#container {
+	position: absolute;
+	/*top: 17vh;*/
+	bottom: -100%;
+	left: 70%;
+	width: 80px;
+	height: 80px;
+	flex-direction: column;
+}
+
+#checkEngineContainer {
+	position: absolute;
+  /*top: 17vh;*/
+  /*background-image: url(images/checkengine.png);*/
+	bottom: 18%;
+	left: 16%;
+	width: 50px;
+	height: 50px;
+	flex-direction: column;
+}
+
+#lowFuelContainer {
+	position: absolute;
+  /*top: 17vh;*/
+	bottom: 14%;
+	left: 16%;
+	width: 50px;
+	height: 50px;
+	flex-direction: column;
+}
+
+#seatbeltContainer {
+	position: absolute;
+	bottom: 10%;
+	left: 16%;
+	width: 50px;
+	height: 50px;
+	flex-direction: column;
+}
+
+header {
+	width: 50px;
+	height: 50px;
+	opacity: 0.8;
+	border-top-left-radius: 40px;
+	border-top-right-radius: 40px;
+}
+
+header img {
+	width: 50px;
+	height: 50px;
+	border-top-left-radius: 40px;
+	border-top-right-radius: 40px;
+}
+
+#hungerbar {
+  position: fixed;
+  height: 0.8333%;
+  width: 6.979167%;
+  border-radius: 0px;
+  background-color: #6a670f;
+  /*box-shadow: -2px 2px 0px 2px rgba(0,0,0,0.5);*/
+  border: 0px solid rgb(7, 43, 77);
+  bottom: 0.6%;
+  left: 1.52%;
+}
+
+#thirstbar {
+  position: fixed;
+  height: 0.8333%;
+  width: 6.92708%;
+  background-color: #465c64;
+  border-radius: 0px;
+  /*box-shadow: -2px 2px 0px 2px rgba(0,0,0,0.5);*/
+  border: 0px solid rgb(7, 43, 77);
+  bottom: 0.6%;
+  left: 8.63%;
+}
+
+#vitalbackground {
+  position: fixed;
+  height: 0.8333%;
+  width: 13.85416%;
+  background-color: #00000064;
+  bottom: 0.6%;
+  left: 1.52%;
+}
+
+#nitrousbar {
+  position: fixed;
+  height: 16px;
+  width: 70px;
+  border-radius: 0px;
+  background-color: #032037c4;
+  /*box-shadow: -2px 2px 0px 2px rgba(0,0,0,0.5);*/
+  border: 0px solid rgb(7, 43, 77);
+  bottom: 4%;
+  left: 16%;
+}
+.nitroustext {
+  font: 14px 'Righteous', Verdana;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px #000000;
+  position: fixed;
+  height: 18px;
+  width: 70px;
+  bottom: 4%;
+  left: 16%;
+}
+
+/* Firefox old*/
+@-moz-keyframes blink {
+  0% {
+    opacity:1;
+  }
+  50% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+} 
+
+@-webkit-keyframes blink {
+  0% {
+    opacity:1;
+  }
+  50% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+/* IE */
+@-ms-keyframes blink {
+  0% {
+    opacity:1;
+  }
+  50% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+} 
+/* Opera and prob css3 final iteration */
+@keyframes blink {
+  0% {
+    opacity:1;
+  }
+  50% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+} 
+.blink-image {
+  -moz-animation: blink normal 1.5s infinite ease-in-out; /* Firefox */
+  -webkit-animation: blink normal 1.5s infinite ease-in-out; /* Webkit */
+  -ms-animation: blink normal 1.5s infinite ease-in-out; /* IE */
+  animation: blink normal 1.5s infinite ease-in-out; /* Opera and prob css3 final iteration */
+}

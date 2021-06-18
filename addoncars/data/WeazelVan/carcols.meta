@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CVehicleModelInfoVarGlobal> 
+<Kits>
+<Item>
+      <kitName>81_rumpo_modkit</kitName>
+      <id value="0"/>
+      <kitType>MKT_STANDARD</kitType>
+      <visibleMods/>
+      <linkMods/>
+      <statMods/>
+      <slotNames/>
+      <liveryNames>
+        <Item>RUMP_lv1</Item>
+        <Item>RUMP_lv2</Item>
+      </liveryNames>
+      <livery2Names/>
+    </Item>
+</Kits>
+</CVehicleModelInfoVarGlobal>

@@ -1,0 +1,343 @@
+<html>
+  <head>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js" type="text/javascript"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.css" rel="stylesheet" type="text/css"/>
+    <script src="charcreator.js" type="text/javascript"></script>
+    <link href="charcreator.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="container-fluid rulescontainer">
+      <div class="rulespopup">
+        <div class="row h-100 d-inline-block p-3">
+          <div class="col h-100 d-inline-block">
+            <div class="rulescontent h-100 w-100 d-inline-block p-2"></div>
+          </div>
+        </div>
+        <div class="row rulesfooter d-inline-block p-2 m-auto">
+          <div class="col">
+            <div class="footercontent">
+              <span class="footerhl">Scroll to the end to continue..</span><button class="btn btn-sm btn-dark float-right buttonproceed" disabled="true">Proceed</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid tabs-master">
+      <div class="nav_left_arrow"></div>
+      <div class="nav_right_arrow"></div>
+      <div class="row">
+        <div class="col-12">
+          <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link active" data-id="1" href="#"><img src="images/cc_body.png"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-id="2" href="#"><img src="images/cc_hairmakeup.png"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-id="3" href="#"><img src="images/cc_clothing.png"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row tab-child" id="tab1"> <!-- Body -->
+        <div class="col-12">
+          <div class="pill-surround">
+            <div class="cat-info">HEAD AND FACE<span class="cat-range" data-cid="0">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="0">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+            <div class="texture-selector">
+              <div class="tex-info">TEXTURES<span class="tex-range">0/0</span></div>
+              <button type="button" class="btn btn-dark slider-tex-nav-left"><</button>
+              <input class="texture-slider" type="text" data-slider-min="1" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true">
+              <button type="button" class="btn btn-dark slider-tex-nav-right">></button>
+            </div>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">EYEBROWS<span class="cat-range" data-cid="17">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="17">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">AGEING<span class="cat-range" data-cid="18">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="18">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">BLEMISHES<span class="cat-range" data-cid="15">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="15">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">COMPLEXION<span class="cat-range" data-cid="21">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="21">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">SUN DAMAGE<span class="cat-range" data-cid="22">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="22">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">MOLES<span class="cat-range" data-cid="24">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="24">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">CHEST HAIR<span class="cat-range" data-cid="25">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="25">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">BODY BLEMISHES<span class="cat-range" data-cid="26">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="26">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          
+        </div>
+      </div>
+      <div class="row tab-child" id="tab2" style="display: none;"> <!-- Hair/Makeup -->
+        <div class="col-12">
+          <div class="pill-surround" data-ignore-tex="true">
+            <div class="cat-info">HAIR STYLE<span class="cat-range" data-cid="2">0/0</span></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="2">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+            <div class="row">
+              <div class="col-12">
+                <div class="haircolor-picker">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">BEARD<span class="cat-range" data-cid="16">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="16">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">MAKEUP<span class="cat-range" data-cid="19">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="19">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">BLUSH<span class="cat-range" data-cid="20">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="20">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">LIPSTICK<span class="cat-range" data-cid="23">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="23">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+        </div>
+      </div>
+      <div class="row tab-child" id="tab3" style="display: none;"> <!-- Clothing -->
+        <div class="col-12">
+          <div class="pill-surround">
+            <div class="cat-info">HEAD ACCESSORIES<span class="cat-range" data-cid="12">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="12">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">MASKS<span class="cat-range" data-cid="1">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="1">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">GLASSES<span class="cat-range" data-cid="13">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="13">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">EAR WEAR<span class="cat-range" data-cid="14">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="14">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">NECK APPAREL<span class="cat-range" data-cid="7">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="7">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">TORSO / ARMS<span class="cat-range" data-cid="3">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="3">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">UNDER SHIRT<span class="cat-range" data-cid="8">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="8">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">JACKETS / SHIRTS<span class="cat-range" data-cid="11">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="11">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">BACKPACKS / PARACHUTES<span class="cat-range" data-cid="5">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="5">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">PANTS / SKIRT<span class="cat-range" data-cid="4">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="4">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">SHOES / FOOT ACCESSORIES<span class="cat-range" data-cid="6">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="6">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">GENERAL ACCESSORIES<span class="cat-range" data-cid="9">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="9">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround">
+            <div class="cat-info">BADGES / PATCHES<span class="cat-range" data-cid="10">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="10">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround specialitem" style="display: hidden;">
+            <div class="cat-info">SPECIALS: WATCH<span class="cat-range" data-cid="50">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="50">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+          <div class="pill-surround specialitem">
+            <div class="cat-info">SPECIALS: BRACELET<span class="cat-range" data-cid="51">0/0</span><div class="hidecomp-button"></div></div>
+            <button type="button" class="btn btn-dark slider-nav-left"><</button>
+            <input class="option-slider" type="text" data-slider-min="0" data-slider-max="0" data-slider-step="1" data-slider-value="0" data-slider-enabled="true" data-cid="51">
+            <button type="button" class="btn btn-dark slider-nav-right">></button>
+          </div>
+        </div>
+      </div>
+      <div class="row cc-menubar">
+        <div class="col-12">
+          <!--<div class="button-container stext" data-stext="Reset Part for Category">
+            <div class="actionbutton" style="background-image:url('images/revert_part.png');" data-reset="1"></div>
+          </div>-->
+          <div class="button-container stext" data-stext="Reset to Last Saved">
+            <div class="actionbutton" style="background-image:url('images/revert_alldef.png');" data-reset="2"></div>
+          </div>
+          <div class="button-container-slot stext" data-stext="Load from Slot">
+            <div class="actionbutton-slot" style="background-image:url('images/load_slot.png');" data-action="load"><span class="slot-number">1</span></div>
+          </div>
+          <div class="sidetext">LOAD</div>
+          <div class="button-container-slot stext" data-stext="Save to Slot">
+            <div class="actionbutton-slot" style="background-image:url('images/save_slot.png');" data-action="save"><span class="slot-number">1</span></div>
+          </div>
+          <div class="sidetext" style="margin-left: 20px;">SAVE</div>
+          <div class="button-container-slot stext" data-stext="Select Slot 5">
+            <div class="actionbutton-slot" style="background-image:url('images/select_slot.png');" data-action="5"><span class="slot-number">5</span></div>
+          </div>
+          <div class="button-container-slot stext" data-stext="Select Slot 4">
+            <div class="actionbutton-slot" style="background-image:url('images/select_slot.png');" data-action="4"><span class="slot-number">4</span></div>
+          </div>
+          <div class="button-container-slot stext" data-stext="Select Slot 3">
+            <div class="actionbutton-slot" style="background-image:url('images/select_slot.png');" data-action="3"><span class="slot-number">3</span></div>
+          </div>
+          <div class="button-container-slot stext" data-stext="Select Slot 2">
+            <div class="actionbutton-slot" style="background-image:url('images/select_slot.png');" data-action="2"><span class="slot-number">2</span></div>
+          </div>
+          <div class="button-container-slot stext" data-stext="Select Slot 1">
+            <div class="actionbutton-slot" style="background-image:url('images/select_slot.png');" data-action="1"><span class="slot-number">1</span></div>
+          </div>
+          <div class="sidetext">SLOT</div>
+        </div>
+      </div>
+      <div class="row cc-helptext" style="text-align:center;">Click to Show the Available Textures</div>
+      <div class="row cc-menubar2">
+        <div class="col-12">
+          <div class="button-container-gender stext" data-stext="Cycle Cameras" style="margin-left: 34px;">
+            <div class="actionbutton-gender" style="background-image:url('images/cycle_cameras.png');" data-cyclecam="1"></div>
+          </div>
+          <div class="button-container-gender stext" data-stext="Select Gender Female">
+            <div class="actionbutton-gender" style="background-image:url('images/female.png');" data-gender="1"></div>
+          </div>
+          <div class="button-container-gender stext" data-stext="Select Gender Male">
+            <div class="actionbutton-gender" style="background-image:url('images/male.png');" data-gender="0"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row cc-sidebar">
+        <div class="col-12">
+          <div class="closebutton">X</div>
+        </div>
+      </div>
+      <div class="row cc-statusbar">
+        <div class="col-12">
+          <span class="status-text"></span>
+        </div>
+      </div>
+      <div class="infobar">
+        <div class="infotext"></div>
+      </div>
+      <div class="moneydisplay"><span style="color: #007d00"></span><span class="moneytext"></span></div>
+    </div>
+
+    <div class="closetpanel">
+      <div class="row" style="margin-top: 6px;">
+        <div class="col-12">
+          <span style="color: white; padding: 18px;">Select a Closet Slot to Load:</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="button-container-slot stext" data-stext="Load from Slot">
+            <div class="actionbutton-slot" style="background-image:url('images/load_slot.png');" data-action="load"><span class="slot-number">1</span></div>
+          </div>
+          <div class="sidetext" >LOAD</div>
+          <div class="button-container-slot stext" data-stext="Select Slot 5">
+            <div class="actionbutton-slot" style="background-image:url('images/select_slot.png');" data-action="5"><span class="slot-number">5</span></div>
+          </div>
+          <div class="button-container-slot stext" data-stext="Select Slot 4">
+            <div class="actionbutton-slot" style="background-image:url('images/select_slot.png');" data-action="4"><span class="slot-number">4</span></div>
+          </div>
+          <div class="button-container-slot stext" data-stext="Select Slot 3">
+            <div class="actionbutton-slot" style="background-image:url('images/select_slot.png');" data-action="3"><span class="slot-number">3</span></div>
+          </div>
+          <div class="button-container-slot stext" data-stext="Select Slot 2">
+            <div class="actionbutton-slot" style="background-image:url('images/select_slot.png');" data-action="2"><span class="slot-number">2</span></div>
+          </div>
+          <div class="button-container-slot stext" data-stext="Select Slot 1">
+            <div class="actionbutton-slot" style="background-image:url('images/select_slot.png');" data-action="1"><span class="slot-number">1</span></div>
+          </div>
+          <div class="sidetext">SLOT</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

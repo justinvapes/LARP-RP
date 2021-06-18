@@ -1,0 +1,144 @@
+.title {
+  font-family: Impact, Arial;
+  font-size: 32px;
+  letter-spacing: 0.05em;
+  text-align: left;
+  color:white;
+  padding-left:10px;
+  text-shadow:
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.titleDesc {
+  font-family: Arial;
+  font-size: 20px;
+  text-align: right;
+  color:#70ed3e;
+  text-shadow:
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  margin-top: -12px;
+}
+
+.scoreText {
+  font-family: Impact, Arial;
+  font-size: 32px;
+  letter-spacing: 0.05em;
+  text-align: left;
+  color:white;
+  text-shadow:
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+#golfScoreboard{
+	border-style: solid;
+	border-color: black;
+	border-width: 4px;
+	color: white;
+  margin-top: 10%;
+  width: 50%;
+  height: 40%;
+  position: relative;
+	background: rgba(0, 0, 0, 0.588);
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  width: 100%;
+  font-size: 18px;
+}
+
+th, td {
+  font-family: Arial;
+  text-align: center;
+}
+
+.row-scorename {
+  width: 30%;
+  padding-right:10px;
+  text-align: right;
+}
+
+.row-hole {
+  width: 6.67%;
+  background-color: rgba(255, 237, 101, 0.785);
+  border-top: 2px solid rgba(0, 0, 0, 0.785);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.785);
+  border-right: 3px solid rgba(0, 0, 0, 0.785);
+}
+
+.row-holetotal {
+  width: 10%;
+  background-color: rgba(255, 237, 101, 0.785);
+  border-top: 2px solid rgba(0, 0, 0, 0.785);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.785);
+  border-left: 3px solid rgba(0, 0, 0, 0.785);
+}
+
+.row-par {
+  width: 6.67%;
+  background-color: rgba(237, 213, 36, 0.785);
+  border-top: 1px solid rgba(0, 0, 0, 0.785);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.785);
+  border-right: 3px solid rgba(0, 0, 0, 0.785);
+}
+
+.row-partotal {
+  width: 10%;
+  background-color: rgba(237, 213, 36, 0.785);
+  border-top: 1px solid rgba(0, 0, 0, 0.785);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.785);
+  border-left: 3px solid rgba(0, 0, 0, 0.785);
+}
+
+.row-name {
+  width: 30%;
+  padding-left:10px;
+  text-align: left;
+  border-top: 3px solid rgba(0, 0, 0, 0.785);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.785);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.row-numLight {
+  width: 6.67%;
+  background-color: rgba(150, 150, 150, 0.588);
+  border-top: 3px solid rgba(0, 0, 0, 0.785);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.785);
+  border-right: 3px solid rgba(0, 0, 0, 0.785);
+}
+
+.row-totalLight {
+  width: 10%;
+  background-color: rgba(150, 150, 150, 0.588);
+  border-top: 3px solid rgba(0, 0, 0, 0.785);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.785);
+  border-left: 3px solid rgba(0, 0, 0, 0.785);
+}
+
+.row-numDark {
+  width: 6.67%;
+  background-color: rgba(100, 100, 100, 0.588);
+  border-top: 3px solid rgba(0, 0, 0, 0.785);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.785);
+  border-right: 3px solid rgba(0, 0, 0, 0.785);
+}
+
+.row-totalDark {
+  width: 10%;
+  background-color: rgba(100, 100, 100, 0.588);
+  border-top: 3px solid rgba(0, 0, 0, 0.785);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.785);
+  border-left: 3px solid rgba(0, 0, 0, 0.785);
+}
